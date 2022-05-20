@@ -1,0 +1,33 @@
+{
+  "name": "flight-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-bly/flight-scraper.git"
+  },
+  "author": "Brendt Bly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b-bly/flight-scraper/issues"
+  },
+  "homepage": "https://github.com/b-bly/flight-scraper#readme",
+  "dependencies": {
+    "puppeteer": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^5.4.6",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
