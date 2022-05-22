@@ -16,6 +16,8 @@ export default class SearchPageController {
   }
 
   async searchForFlight() {
-    await this.searchPage.searchForFlight("MSP", "FLR")
+    await this.searchPage.searchForFlight("TUS", "CHI")
+    const price = await this.searchPage.getFirstPrice()
+    console.log(price)
   }
 }
