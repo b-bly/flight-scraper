@@ -1,4 +1,8 @@
-import Runner from './Runner'
+import Runner from "./runner"
 
-const runner = new Runner({})
+const options = {
+  headless: false,
+};
+
+const runner = new Runner(options)
 runner.start()

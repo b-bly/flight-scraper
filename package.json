@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/*",
+    "lint": "eslint --fix",
+    "prebuild": "npm run clean && npm run lint",
+    "build": "npm run tsc",
+    "postbuild": "cpy '**/*' '!**/*.ts' ../dist/ --cwd=src/ --no-overwrite --parents",
+    "start": "node ./dist/index.js",
+    "dev:start": "ts-node src/index.ts",
+    "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start"
   },
   "repository": {
     "type": "git",
@@ -16,15 +25,22 @@
   },
   "homepage": "https://github.com/b-bly/flight-scraper#readme",
   "dependencies": {
-    "puppeteer": "^14.1.0"
+    "dotenv": "^16.0.1",
+    "puppeteer": "^14.1.0",
+    "winston": "^3.7.2"
   },
   "devDependencies": {
     "@types/puppeteer": "^5.4.6",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "nodemon": "^2.0.16",
     "prettier": "^2.6.2",
     "ts-loader": "^9.3.0",
     "ts-node": "^10.7.0",

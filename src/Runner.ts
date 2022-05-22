@@ -1,18 +1,17 @@
-import { Browser } from 'puppeteer'
-import puppeteer from 'puppeteer'
+import puppeteer from "puppeteer"
+import KayakBrowserController from "./browserControllers/kayakBrowserController"
 
 export default class Runner {
   constructor(private options: {}) {}
 
   async start() {
-    const options = {
-      headless: false
-    }
-    const browser = await puppeteer.launch(options);  
-    const page = await browser.newPage();
-    await page.goto('https://example.com');
-    await page.screenshot({ path: 'example.png' });
-    await page.close();
-    await browser.close();
+    const { options } = this
+    const browser = await puppeteer.launch(options)
+    const kayakBrowserController = new KayakBrowserController(
+      browser,
+      options,
+      "https://kayak.com"
+    )
+    await kayakBrowserController.start()
   }
 }
