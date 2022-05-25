@@ -25,11 +25,13 @@
   },
   "homepage": "https://github.com/b-bly/flight-scraper#readme",
   "dependencies": {
+    "d3-fetch": "^3.0.1",
     "dotenv": "^16.0.1",
     "puppeteer": "^14.1.0",
     "winston": "^3.7.2"
   },
   "devDependencies": {
+    "@types/d3-fetch": "^3.0.1",
     "@types/puppeteer": "^5.4.6",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",

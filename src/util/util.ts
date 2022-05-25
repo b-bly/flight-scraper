@@ -1,6 +1,7 @@
 import { MAX_RETRIES } from './constants'
 import type { Page } from 'puppeteer'
 import logger from './logger'
+import { csv } from 'd3-fetch';
 
 export const sleep = async (seconds: number) =>
   await new Promise((resolve) => setTimeout(resolve, seconds * 1000))
@@ -37,4 +38,12 @@ export const retryClick = async (page: Page, parameter: string, maxRetries = MAX
     }
   }
   if (!el) { console.log('Couldn\'t get element') }
+}
+
+export const getJsonFromCsv = async  (url: string, cb?: Function): Promise<any> => {
+  try {
+    return await csv(url, (data) => cb ? cb(data) : data);
+  } catch (e) {
+    return e;
+  }
 }
