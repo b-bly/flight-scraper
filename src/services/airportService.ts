@@ -1,9 +1,11 @@
 import { getJsonFromCsv } from "../util/util"
 import path from "path"
+// import { writeFileSync } from "fs" 
 
 interface Airport {
   ident: string
-  type: string
+  type: AirportType
+  iata_code: string
 }
 
 enum AirportType {
@@ -14,12 +16,14 @@ enum AirportType {
 }
 
 export default class AirportService {
-  static saveLargeAirportCodes() {
-    const cb = (data: Airport[]) =>
-      data.filter((airport: Airport) => /large/i.test(airport.type))
-    const airportData = getJsonFromCsv(
-      path.resolve(__dirname, "../../support/sc-est2019-alldata6.csv"),
-      cb
+  static async saveLargeAirportCodes(): Promise<string[]> {
+    return (
+      await getJsonFromCsv(
+        path.resolve(__dirname, "../../support/airport-codes.csv")
+      )
     )
+      .filter((airport: Airport) => /large/i.test(airport.type) ) //&& airport.iata_code?.length > 0
+      .map((airport: Airport) => airport.iata_code)
+    // .writeFileSync('../../support/largeAirportCodes.json')
   }
 }

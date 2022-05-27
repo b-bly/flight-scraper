@@ -1,7 +1,8 @@
 import { MAX_RETRIES } from './constants'
 import type { Page } from 'puppeteer'
 import logger from './logger'
-import { csv } from 'd3-fetch';
+import csv from 'csv-parser' // const csv = require('csv-parser');
+import { createReadStream } from 'fs'
 
 export const sleep = async (seconds: number) =>
   await new Promise((resolve) => setTimeout(resolve, seconds * 1000))
@@ -40,10 +41,21 @@ export const retryClick = async (page: Page, parameter: string, maxRetries = MAX
   if (!el) { console.log('Couldn\'t get element') }
 }
 
-export const getJsonFromCsv = async  (url: string, cb?: Function): Promise<any> => {
-  try {
-    return await csv(url, (data) => cb ? cb(data) : data);
-  } catch (e) {
-    return e;
-  }
+export const getJsonFromCsv = async (url: string, cb?: () => void): Promise<any[]> => {
+  const data: any[] = [];
+  return new Promise((resolve, reject) => {
+    createReadStream(url)
+      .on('error', () => {
+        console.log('error');
+        reject();
+      })
+      .pipe(csv())
+      .on('data', (row: any) => {
+        data.push(row);
+      })
+      .on('end', () => {
+        resolve(data);
+      });
+      if (cb) { cb(); }
+  });
 }

@@ -1,6 +1,11 @@
 import type { Page } from "puppeteer"
 import SearchResultsPage from "../pageObjects/searchResultsPage"
 
+// namespace SearchPage {
+//   interface SearchPageControllerOptions {
+//   }
+// }
+
 export default class SearchPageController {
   private searchPage: SearchResultsPage
 
@@ -15,7 +20,7 @@ export default class SearchPageController {
     return await searchPage.waitForPageLoad()
   }
 
-  async searchForFlight() {
+  async searchForFlight(airportCodes: string[]) {
     await this.searchPage.searchForFlight("TUS", "CHI")
     const price = await this.searchPage.getFirstPrice()
     console.log(price)

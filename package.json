@@ -12,7 +12,8 @@
     "postbuild": "cpy '**/*' '!**/*.ts' ../dist/ --cwd=src/ --no-overwrite --parents",
     "start": "node ./dist/index.js",
     "dev:start": "ts-node src/index.ts",
-    "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start"
+    "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
+    "dev:watch": "nodemon --watch src -e ts,ejs"
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,10 @@
   },
   "homepage": "https://github.com/b-bly/flight-scraper#readme",
   "dependencies": {
-    "d3-fetch": "^3.0.1",
     "dotenv": "^16.0.1",
     "puppeteer": "^14.1.0",
-    "winston": "^3.7.2"
+    "winston": "^3.7.2",
+    "csv-parser": "^3.0.0"
   },
   "devDependencies": {
     "@types/d3-fetch": "^3.0.1",
