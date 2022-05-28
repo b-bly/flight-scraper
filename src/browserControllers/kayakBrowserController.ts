@@ -1,6 +1,6 @@
-import type { Browser } from "puppeteer"
-import SearchPageController from "../pageControllers/searchPageController"
-import AirportService from "../services/airportService"
+import type { Browser } from 'puppeteer'
+import SearchPageController from '../pageControllers/searchPageController'
+import AirportService from '../services/airportService'
 
 export default class KayakBrowserController {
   constructor(
@@ -12,13 +12,14 @@ export default class KayakBrowserController {
   async start(): Promise<void> {
     const { browser } = this
     const page = await browser.newPage()
-    const allAirportCodes = await AirportService.saveLargeAirportCodes()
+    const airportCodes = await AirportService.getLargeAirportCodes()
     // const airportCodes = allAirportCodes.slice(0, 1)  // TODO remove.  For dev only.
-    console.log(allAirportCodes)
 
-    const searchPageController = new SearchPageController(page, {})
-    await searchPageController.visit(this.baseUrl)
+    const searchPageController = new SearchPageController(page, {}, this.baseUrl)
+    // await searchPageController.visit()
     // await page.screenshot({path: 'screenshots/homePage.png'})
     // await searchPageController.searchForFlight(airportCodes)
+    await searchPageController.searchForFlightByUrl('MSP', 'LAS')
+    return
   }
 }

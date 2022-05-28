@@ -7,9 +7,14 @@ import { createReadStream } from 'fs'
 export const sleep = async (seconds: number) =>
   await new Promise((resolve) => setTimeout(resolve, seconds * 1000))
 
-export const retry = async (block: Function, parameter: string, maxRetries = MAX_RETRIES, time = 1000) => {
+export const retry = async (
+  block: Function,
+  parameter: string,
+  maxRetries = MAX_RETRIES,
+  time = 1000
+) => {
   let counter = 0
-  let condition = false;
+  let condition = false
   let el
   while (!condition && counter++ < maxRetries) {
     try {
@@ -21,12 +26,19 @@ export const retry = async (block: Function, parameter: string, maxRetries = MAX
       await new Promise((resolve) => setTimeout(resolve, time))
     }
   }
-  if (!el) { console.log('Couldn\'t get element') }
+  if (!el) {
+    console.log("Couldn't get element")
+  }
 }
 
-export const retryClick = async (page: Page, parameter: string, maxRetries = MAX_RETRIES, time = 1000) => {
+export const retryClick = async (
+  page: Page,
+  parameter: string,
+  maxRetries = MAX_RETRIES,
+  time = 1000
+) => {
   let counter = 0
-  let condition = false;
+  let condition = false
   let el
   while (!condition && counter++ < maxRetries) {
     try {
@@ -38,24 +50,31 @@ export const retryClick = async (page: Page, parameter: string, maxRetries = MAX
       await new Promise((resolve) => setTimeout(resolve, time))
     }
   }
-  if (!el) { console.log('Couldn\'t get element') }
+  if (!el) {
+    console.log("Couldn't get element")
+  }
 }
 
-export const getJsonFromCsv = async (url: string, cb?: () => void): Promise<any[]> => {
-  const data: any[] = [];
+export const getJsonFromCsv = async (
+  url: string,
+  cb?: () => void
+): Promise<any[]> => {
+  const data: any[] = []
   return new Promise((resolve, reject) => {
     createReadStream(url)
       .on('error', () => {
-        console.log('error');
-        reject();
+        console.log('error')
+        reject()
       })
       .pipe(csv())
       .on('data', (row: any) => {
-        data.push(row);
+        data.push(row)
       })
       .on('end', () => {
-        resolve(data);
-      });
-      if (cb) { cb(); }
-  });
+        resolve(data)
+      })
+    if (cb) {
+      cb()
+    }
+  })
 }

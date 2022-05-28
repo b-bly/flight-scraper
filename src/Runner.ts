@@ -1,5 +1,5 @@
-import puppeteer from "puppeteer"
-import KayakBrowserController from "./browserControllers/kayakBrowserController"
+import puppeteer from 'puppeteer'
+import KayakBrowserController from './browserControllers/kayakBrowserController'
 
 export default class Runner {
   constructor(private options: {}) {}
@@ -10,8 +10,9 @@ export default class Runner {
     const kayakBrowserController = new KayakBrowserController(
       browser,
       options,
-      "https://kayak.com"
+      'https://kayak.com'
     )
     await kayakBrowserController.start()
+    // await browser.close()
   }
 }

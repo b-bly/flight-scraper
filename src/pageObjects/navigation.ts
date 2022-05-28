@@ -1,4 +1,4 @@
-import { Page } from "puppeteer"
+import { Page } from 'puppeteer'
 
 const MENU = '[aria-label="Menu"]'
 

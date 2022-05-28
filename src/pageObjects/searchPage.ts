@@ -1,15 +1,27 @@
-import type { Page } from "puppeteer"
-import { sleep, retry, retryClick } from "../util/util"
-import logger from "../util/logger"
+import type { Page } from 'puppeteer'
+import { sleep, retry, retryClick } from '../util/util'
+import logger from '../util/logger'
 import Navigation from './navigation'
+
+enum Sort {
+  duration = 'duration',
+  bestflight = 'bestflight',
+  price = 'price',
+}
+
+interface FlightSearchParameters {
+  sort: Sort
+  numberAdults: number
+  date: Date
+}
 
 // TODO namespace
 
 // const PICK_UP_LOCATION_BUTTON = '[aria-label="Pick-up location"]' // cars page
 const FLIGHTS_LINK = 'a[href="/flights"'
-const AIRPORT_CHIP_CLOSE_BUTTON = ".vvTc-item .vvTc-item-close"
+const AIRPORT_CHIP_CLOSE_BUTTON = '.vvTc-item .vvTc-item-close'
 const AIRPORT_FROM_BUTTON = '[aria-label="Flight origin input"]'
-const AIRPORT_FROM_INPUT = ".k_my input" // input[placeholder="From?"]
+const AIRPORT_FROM_INPUT = '.k_my input' // input[placeholder="From?"]
 const FROM_LIST_ITEM = 'ul[role="tablist"] li'
 const FROM_CHIP =
   'div[aria-label="Flight origin input"] div[role="list"] div[role="listitem"]'
@@ -21,7 +33,7 @@ const TO_CHIP =
 const SEARCH_BUTTON = '[aria-label="Search"][aria-disabled="false"]'
 
 export default class SearchPage extends Navigation {
-  path: string = "/flights"
+  path: string = '/flights'
 
   constructor(page: Page) {
     super(page)
@@ -85,8 +97,11 @@ export default class SearchPage extends Navigation {
     // validate text
     let value = await page.evaluate((el) => el.textContent, toInput)
     if (value.toLowerCase() !== to.toLowerCase()) {
-      logger.debug("Retrying destination entry")
-      await page.evaluate((selector) => (document.querySelector(selector).value = ""), AIRPORT_DESTINATION_INPUT)
+      logger.debug('Retrying destination entry')
+      await page.evaluate(
+        (selector) => (document.querySelector(selector).value = ''),
+        AIRPORT_DESTINATION_INPUT
+      )
       await toInput.type(to, { delay: 100 })
     }
 
@@ -103,5 +118,87 @@ export default class SearchPage extends Navigation {
       SEARCH_BUTTON
     )
     // return await searchButton.click()
+  }
+
+  getSearchDefaults(): FlightSearchParameters {
+    return {
+      sort: Sort.bestflight,
+      numberAdults: 1,
+      date: new Date(),
+    }
+  }
+
+  getSearchUrl(
+    fromCode: string,
+    toCode: string,
+    urlParameters?: FlightSearchParameters
+  ) {
+    let { sort, numberAdults, date } = urlParameters
+    // example https://www.kayak.com/flights/MSP-CHI/2022-07-01?sort=bestflight_a&attempt=1&lastms=1653771259468
+    //         https://www.kayak.com/flights/MSP-LAS/2022-5-6/1adults?sort=bestflight_aa
+    const convertToTwoDigits = (oneOrTwodigits: string) =>
+      oneOrTwodigits.length < 2
+        ? '0'.concat(oneOrTwodigits).slice(-2)
+        : oneOrTwodigits
+    // defaults
+    const adults = `${numberAdults.toString()}adults`
+    const dateParam = `${date.getFullYear()}-${convertToTwoDigits(
+      (date.getMonth() + 1).toString()
+    )}-${convertToTwoDigits(date.getDate().toString())}`
+
+    return `/flights/${fromCode}-${toCode}/${dateParam}/${adults}?sort=${sort}_a`
+  }
+
+  async interceptSearchRequest() {
+    // Intercept example url https://www.kayak.com/s/horizon/flights/results/FlightSearchPoll?p=1
+
+    const { page } = this
+    await page.setRequestInterception(true)
+    page.on('request', async (req) => {
+      req.continue()
+    })
+    // also page.waitForResponse
+    const theBody = await page.on('response', async (res) => {
+      const urlRegex = /s\/horizon\/flights\/results\/FlightSearchPoll/i
+      // if (req.isNavigationRequest() && req.frame() === page.mainFrame()) {
+      // console.log(res.url())
+      if (urlRegex.test(await res.url())) {
+          const body = await res.json()
+          // console.log(body)
+          // const text = await req.text()
+          // console.log(text)
+          // const body = (res.text())
+          const data = body?.react?.components[1]?.props?.result?.optionsByFare[0] // [0]
+
+          console.log(data)
+          if (!data) {
+            console.log(Object.keys(body))
+            // TODO Writefilesync
+          }
+          
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          console.log('********************')
+          // console.log(body)
+          // interceptedRequest.continue();
+          // return body
+          res.ok()
+        }
+        res.ok()
+      // } 
+      // req.continue()
+      
+    })
+
+    // console.log(theBody)
+
+    return theBody
   }
 }

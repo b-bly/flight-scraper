@@ -1,16 +1,16 @@
-import logger from "./logger"
-import dotenv from "dotenv"
-import fs from "fs"
+import logger from './logger'
+import dotenv from 'dotenv'
+import fs from 'fs'
 
 export const MAX_RETRIES = 3
 
-if (fs.existsSync(".env")) {
-  logger.debug("Using .env file to supply config environment variables")
-  dotenv.config({ path: ".env" })
+if (fs.existsSync('.env')) {
+  logger.debug('Using .env file to supply config environment variables')
+  dotenv.config({ path: '.env' })
 }
 
 export const ENVIRONMENT = process.env.NODE_ENV
-const prod = ENVIRONMENT === "production" // Anything else is treated as 'dev'
+const prod = ENVIRONMENT === 'production' // Anything else is treated as 'dev'
 
 // export const SESSION_SECRET = process.env["SESSION_SECRET"]
 // export const MONGODB_URI = prod
