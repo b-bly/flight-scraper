@@ -2,6 +2,7 @@ import type { Page } from 'puppeteer'
 import { sleep, retry, retryClick } from '../util/util'
 import logger from '../util/logger'
 import Navigation from './navigation'
+import { writeFileSync } from 'fs';
 
 enum Sort {
   duration = 'duration',
@@ -157,48 +158,22 @@ export default class SearchPage extends Navigation {
     page.on('request', async (req) => {
       req.continue()
     })
-    // also page.waitForResponse
+
     const theBody = await page.on('response', async (res) => {
+      // TODO Just intercept first page and first result?
       const urlRegex = /s\/horizon\/flights\/results\/FlightSearchPoll/i
-      // if (req.isNavigationRequest() && req.frame() === page.mainFrame()) {
-      // console.log(res.url())
       if (urlRegex.test(await res.url())) {
           const body = await res.json()
-          // console.log(body)
-          // const text = await req.text()
-          // console.log(text)
-          // const body = (res.text())
           const data = body?.react?.components[1]?.props?.result?.optionsByFare[0] // [0]
 
           console.log(data)
-          if (!data) {
-            console.log(Object.keys(body))
-            // TODO Writefilesync
+          if (data) {
+            // TODO Save data to db
+            return data
           }
-          
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          console.log('********************')
-          // console.log(body)
-          // interceptedRequest.continue();
-          // return body
           res.ok()
         }
         res.ok()
-      // } 
-      // req.continue()
-      
     })
-
-    // console.log(theBody)
-
-    return theBody
   }
 }
