@@ -1,8 +1,9 @@
 import type { Page } from 'puppeteer'
-import { sleep, retry, retryClick } from '../util/util'
+import { retryClick } from '../util/util'
 import logger from '../util/logger'
 import Navigation from './navigation'
-import { writeFileSync } from 'fs';
+import { IFlightPayload } from '../models/flight'
+import FlightService from '../services/flightService';
 
 enum Sort {
   duration = 'duration',
@@ -150,6 +151,17 @@ export default class SearchPage extends Navigation {
     return `/flights/${fromCode}-${toCode}/${dateParam}/${adults}?sort=${sort}_a`
   }
 
+  convertToFlight(data: any): IFlightPayload {
+    return {
+      price: data.legs[0]?.segments[0],
+      airlines: data.legs[0]?.segments[0]?.airline?.code,
+      destination: data.legs[0]?.segments[0]?.arrival.airport.code,
+      arrivalTime: data.legs[0]?.segments[0]?.arrival.isoDateTimeLocal,
+      departure: data.legs[0]?.segments[0]?.departure.airport.code,
+      departureTime: data.legs[0]?.segments[0]?.arrival.isoDateTimeLocal,
+    }
+  }
+
   async interceptSearchRequest() {
     // Intercept example url https://www.kayak.com/s/horizon/flights/results/FlightSearchPoll?p=1
 
@@ -163,17 +175,18 @@ export default class SearchPage extends Navigation {
       // TODO Just intercept first page and first result?
       const urlRegex = /s\/horizon\/flights\/results\/FlightSearchPoll/i
       if (urlRegex.test(await res.url())) {
-          const body = await res.json()
-          const data = body?.react?.components[1]?.props?.result?.optionsByFare[0] // [0]
+        const body = await res.json()
+        const data = body?.react?.components[1]?.props?.result //?.optionsByFare[0] // [0]
 
-          console.log(data)
-          if (data) {
-            // TODO Save data to db
-            return data
-          }
-          res.ok()
+        if (body.react) console.log(data)
+        if (data) {
+          // TODO Save data to db
+          const payload = this.convertToFlight(data)
+          return FlightService.saveFlight(payload)
         }
-        res.ok()
+        // res.ok()
+      }
+      res.ok()
     })
   }
 }

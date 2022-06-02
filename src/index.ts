@@ -2,6 +2,7 @@ import Runner from './runner'
 // const express = require('express')
 import  express, { Request, Response }from 'express'
 import './models/flight'
+import './database'
 
 const fs = require('fs')
 const existsSync = fs.existsSync
@@ -13,8 +14,8 @@ const options = {
 }
 
 // TODO Uncomment when db and server are done
-// const runner = new Runner(options)
-// runner.start()
+const runner = new Runner(options)
+runner.start()
 
 const app = express()
 const port = 3000

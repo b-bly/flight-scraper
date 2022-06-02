@@ -1,17 +1,25 @@
 import { Schema, model } from 'mongoose'
 
-// 1. Create an interface representing a document in MongoDB.
 interface IFlight {
   price: Number
+  airlines: [String]
+  destination: String
+  arrivalTime: Date
+  departure: String
+  departureTime: Date
 }
 
-// 2. Create a Schema corresponding to the document interface.
+export interface IFlightPayload {
+  price: IFlight['price']
+  airlines: IFlight['airlines']
+  destination: IFlight['destination']
+  arrivalTime: IFlight['arrivalTime']
+  departure: IFlight['departure']
+  departureTime: IFlight['departureTime']
+}
+
 const flightSchema = new Schema<IFlight>({
   price: { type: Number, required: true },
 })
 
-// 3. Create a Model.
 export const Flight = model<IFlight>('Flight', flightSchema)
-
-
-
