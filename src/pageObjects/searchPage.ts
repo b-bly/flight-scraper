@@ -153,12 +153,13 @@ export default class SearchPage extends Navigation {
 
   convertToFlight(data: any): IFlightPayload {
     return {
-      price: data.legs[0]?.segments[0],
+      price: data.optionsByFare[0]?.options[0]?.displayPrice?.replace('$', ''),
       airlines: data.legs[0]?.segments[0]?.airline?.code,
       destination: data.legs[0]?.segments[0]?.arrival.airport.code,
       arrivalTime: data.legs[0]?.segments[0]?.arrival.isoDateTimeLocal,
       departure: data.legs[0]?.segments[0]?.departure.airport.code,
       departureTime: data.legs[0]?.segments[0]?.arrival.isoDateTimeLocal,
+      url: `https://kayak.com${data.optionsByFare[0]?.options[0]?.url}`,
     }
   }
 
@@ -178,9 +179,9 @@ export default class SearchPage extends Navigation {
         const body = await res.json()
         const data = body?.react?.components[1]?.props?.result //?.optionsByFare[0] // [0]
 
-        if (body.react) console.log(data)
+        if (body.react) logger.debug('Received flight data')
         if (data) {
-          // TODO Save data to db
+          logger.debug('Saving flight')
           const payload = this.convertToFlight(data)
           return FlightService.saveFlight(payload)
         }

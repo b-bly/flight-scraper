@@ -1,6 +1,16 @@
 import mongoose from 'mongoose'
+import logger from './util/logger'
 
 // TODO config
-const connectionString = 'mongodb://localhost:27017/flight'
+// https://stackoverflow.com/questions/46523321/mongoerror-connect-econnrefused-127-0-0-127017
+const connectionString = 'mongodb://0.0.0.0:27017/flight'
 
-mongoose.connect(connectionString);
+export const connectToMongo = async () => {
+  try {
+    const connection = await mongoose.connect(connectionString)
+    logger.debug('Connected to mongo.')
+    return connection
+  } catch (error) {
+    logger.error(`Error connecting to db: ${error.message}`)
+  }
+}
