@@ -14,23 +14,23 @@ const { exec } = require('child_process')
 
 connectToMongo()
 
-const options = {
-  headless: false,
-}
-
 // TODO Uncomment when db and server are done
-const runner = new Runner(options)
+const runner = new Runner()
 runner.start()
 
 const app = express()
-const port = 3000
+// TODO: Set as env
+const port = 8080
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
 app.get('/', (_req: Request, res: Response) => {
-  res.send('hello')
+  FlightService.getFlights().then(flights => {
+    console.log(flights)
+    res.send(flights[0])
+  })
 })
 
 // Test db connection

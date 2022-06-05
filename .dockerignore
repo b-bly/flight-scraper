@@ -1,0 +1,7 @@
+screenshots/**/*
+minikube
+logs/**.*
+.git
+.github
+.vscode
+circleci

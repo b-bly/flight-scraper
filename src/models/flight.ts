@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose'
 
-interface IFlight {
+export interface IFlight {
   price: Number
   airlines: [String]
   destination: String

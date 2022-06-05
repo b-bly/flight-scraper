@@ -1,8 +1,18 @@
 import puppeteer from 'puppeteer'
 import KayakBrowserController from './browserControllers/kayakBrowserController'
 
+const defaultOptions = {
+  headless: true,
+  args: [
+    "--disable-gpu",
+    "--disable-dev-shm-usage",
+    "--disable-setuid-sandbox",
+    "--no-sandbox",
+  ]
+}
+
 export default class Runner {
-  constructor(private options: {}) {}
+  constructor(private options: {} = defaultOptions) {}
 
   async start() {
     const { options } = this

@@ -1,4 +1,4 @@
-import { Flight } from '../models/flight'
+import { Flight, IFlight } from '../models/flight'
 
 export default class FlightService {
   static async saveFlight(data: any) {
@@ -6,12 +6,12 @@ export default class FlightService {
     await flight.save()
   }
 
-  static async getFlights(page = 1) {
+  static async getFlights(page = 1): Promise<IFlight[]> {
     if (page < 1) {
       throw new Error('pages must be more than one')
     }
     const skip = (page - 1) * 20
-    await Flight.find()
+    return await Flight.find()
       .skip(10)
       .limit(20)
   }
