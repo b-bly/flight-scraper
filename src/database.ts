@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 import logger from './util/logger'
-import { MONGODB_URI } from './util/constants';
+import { MONGODB_URI } from './util/constants'
 
 // TODO config
 // https://stackoverflow.com/questions/46523321/mongoerror-connect-econnrefused-127-0-0-127017
-const connectionString = MONGODB_URI // 'mongodb://0.0.0.0:27017/flight'
+const connectionString = MONGODB_URI // local 'mongodb://0.0.0.0:27017/flight'
 
 export const connectToMongo = async () => {
   try {
@@ -13,5 +13,6 @@ export const connectToMongo = async () => {
     return connection
   } catch (error) {
     logger.error(`Error connecting to db: ${error.message}`)
+    throw error
   }
 }

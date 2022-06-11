@@ -4,21 +4,26 @@ import fs from 'fs'
 
 export const MAX_RETRIES = 3
 
-if (fs.existsSync('.env')) {
+if (fs.existsSync('../../.env')) {
   logger.debug('Using .env file to supply config environment variables')
-  dotenv.config({ path: '.env' })
+  dotenv.config({ path: '../../.env' })
 }
 
 export const ENVIRONMENT = process.env.NODE_ENV
 const prod = ENVIRONMENT === 'production' // Anything else is treated as 'dev'
 
-console.log('prod?')
-console.log(prod)
+logger.debug(`NODE_ENV = ${process.env.NODE_ENV}`)
+
 // export const SESSION_SECRET = process.env["SESSION_SECRET"]
-export const MONGODB_URI = process.env.MONGODB_URI
+let mongodbUri = 'mongodb://0.0.0.0:27017/flight'
+if (prod === true) {
+  mongodbUri = process.env.MONGODB_URI
+}
 
+logger.debug(`Setting MONGODB_URI to ${mongodbUri}`)
 
-console.log(MONGODB_URI)
+export const MONGODB_URI = mongodbUri
+
 // if (!SESSION_SECRET) {
 //   logger.error("No client secret. Set SESSION_SECRET environment variable.")
 //   process.exit(1)

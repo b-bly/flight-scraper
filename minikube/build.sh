@@ -4,7 +4,6 @@ if test -f ../.env ; then
   source ../.env
 fi
 
-rm -rf ../node_modules
 npm run clean:logs
 npm run clean
 

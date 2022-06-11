@@ -3,7 +3,8 @@ import { retryClick } from '../util/util'
 import logger from '../util/logger'
 import Navigation from './navigation'
 import { IFlightPayload } from '../models/flight'
-import FlightService from '../services/flightService';
+import FlightService from '../services/flightService'
+import SearchPageController from '../pageControllers/searchPageController'
 
 enum Sort {
   duration = 'duration',
@@ -43,7 +44,14 @@ export default class SearchPage extends Navigation {
 
   async waitForPageLoad() {
     const { page } = this
-    await page.waitForSelector(AIRPORT_FROM_BUTTON)
+    await page.screenshot({ path: './screenshots/before_load.png' })
+    try {
+      await page.waitForSelector(AIRPORT_FROM_BUTTON)
+    } catch (e) {
+      await logger.error("Couldn't find airport from button.")
+      page.screenshot({ path: './screenshots/failed_to_load_home.png' })
+      throw e
+    }
   }
 
   // async checkIfCarsPageLoaded () {
@@ -163,7 +171,7 @@ export default class SearchPage extends Navigation {
     }
   }
 
-  async interceptSearchRequest() {
+  async interceptSearchRequest(parent: SearchPageController) {
     // Intercept example url https://www.kayak.com/s/horizon/flights/results/FlightSearchPoll?p=1
 
     const { page } = this
@@ -172,9 +180,9 @@ export default class SearchPage extends Navigation {
       req.continue()
     })
 
-    const theBody = await page.on('response', async (res) => {
-      // TODO Just intercept first page and first result?
+    page.on('response', async (res) => {
       const urlRegex = /s\/horizon\/flights\/results\/FlightSearchPoll/i
+      // \?p=0
       if (urlRegex.test(await res.url())) {
         const body = await res.json()
         const data = body?.react?.components[1]?.props?.result //?.optionsByFare[0] // [0]
@@ -183,11 +191,11 @@ export default class SearchPage extends Navigation {
         if (data) {
           logger.debug('Saving flight')
           const payload = this.convertToFlight(data)
-          return FlightService.saveFlight(payload)
+          res.ok()
+          await FlightService.saveFlight(payload)
+          parent.onSearchDataReceived()
         }
-        // res.ok()
       }
-      res.ok()
     })
   }
 }
