@@ -8,12 +8,10 @@ import RecaptchaPlugin from 'puppeteer-extra-plugin-recaptcha'
 import AdblockerPlugin from 'puppeteer-extra-plugin-stealth'
 
 // puppeteer.use(StealthPlugin())
-puppeteer.use(AdblockerPlugin())
-puppeteer.use(RecaptchaPlugin()).use(StealthPlugin())
 
 // TODO: Make cli
 const defaultOptions = {
-  headless: true,
+  headless: false,
   args: [
     '--disable-gpu',
     '--disable-dev-shm-usage',
@@ -27,6 +25,8 @@ export default class Runner {
 
   async start() {
     const { options } = this
+    await puppeteer.use(AdblockerPlugin())
+    await puppeteer.use(RecaptchaPlugin()).use(StealthPlugin())
     const browser = await puppeteer.launch(options)
     const kayakBrowserController = new KayakBrowserController(
       browser,

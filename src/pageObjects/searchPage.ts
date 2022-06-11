@@ -161,7 +161,9 @@ export default class SearchPage extends Navigation {
 
   convertToFlight(data: any): IFlightPayload {
     return {
-      price: data.optionsByFare[0]?.options[0]?.displayPrice?.replace('$', ''),
+      price: data.optionsByFare[0]?.options[0]?.displayPrice
+        ?.replace('$', '')
+        .replace(/,/g, ''),
       airlines: data.legs[0]?.segments[0]?.airline?.code,
       destination: data.legs[0]?.segments[0]?.arrival.airport.code,
       arrivalTime: data.legs[0]?.segments[0]?.arrival.isoDateTimeLocal,
@@ -187,15 +189,25 @@ export default class SearchPage extends Navigation {
         const body = await res.json()
         const data = body?.react?.components[1]?.props?.result //?.optionsByFare[0] // [0]
 
-        if (body.react) logger.debug('Received flight data')
+        if (body.react) {
+          logger.debug('Received flight data type React.js')
+        }
         if (data) {
           logger.debug('Saving flight')
           const payload = this.convertToFlight(data)
-          res.ok()
           await FlightService.saveFlight(payload)
-          parent.onSearchDataReceived()
+          await parent.onSearchDataReceived()
+          // } else if (body.bufferedScripts) {
+          // logger.debug('Received flight data type bufferedScripts')
+          // console.log(body.bufferedScripts)
+        } else {
+          logger.debug('Unexpected response format')
+          console.log(body.bufferedScripts)
+          return await parent.abortInterceptSearch()
         }
       }
+      res.ok()
     })
+    return
   }
 }

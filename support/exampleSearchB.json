@@ -1,0 +1,533 @@
+
+{
+  version: 'R620d',
+  content: '<div id="savedResultsListContainer" data-ajax-replace>\n' +
+    '</div>\n' +
+    '<div id="aboveHeaderContainer" class="aboveHeaderContainer " data-ajax-replace>\n' +
+    '<div id="SgYb" class="Flights-Results-FlightAboveHeaderContent FlightAboveHeaderContent">\n' +
+    '<div class="flexMatrixWrapper" aria-expanded="false">\n' +
+    '</div>\n' +
+    '<div class="airlineWrapper" aria-expanded="false">\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div id="aboveResultsContainer" class="aboveResultsContainer" data-ajax-replace>\n' +
+    '<div id="LLzb" class="Flights-Results-FlightAboveResultsContent">\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div id="searchResultsList" class="Base-Results-ResultsList Flights-Results-FlightResultsList">\n' +
+    '<div id="TcAiqDiOd5-1" >\n' +
+    '<div\n' +
+    'id="inline-1"\n' +
+    'class="Common-Kn-Rp-Inline flights phoenix-rising extra-vertical-spacing clearfix type-provider rp-contrast"\n' +
+    `onclick="R9.events.publish('ecommerce.track', {event: 'inline.ad'});"\n` +
+    'role="link"\n' +
+    'aria-label="Advertisement from delta.com: Start Your Next Adventure"\n' +
+    'tabindex="0" tabbable>\n' +
+    '<nav class="aria-controls">\n' +
+    '<a href="javascript:void(0)" id="inline-1-skip">Skip this item</a>\n' +
+    '</nav>\n' +
+    `<div id="CvtW" class="Common-Kn-Rp-FlightInline smart reduced" onclick="window.open('/s/clickthrough.jsp?ctyp=InlineOpaqueAdBooking&ptyp=F&orig=F..RP..M1&octid=&plid=996
+    4610&cpnid=7074057&pid=DeltaInlinedesk_FIOAD_US&prv=DeltaInlinedesk_FIOAD_US&srch=TcAiqDiOd5&ploc=US&displayRail=Rslt&rank=1&atype=inline&prc=398.61&pgrp=1&xpExt=&aidExt=&
+    lid=DeltaInlinedesk_FIOAD_US-TcAiqDiOd5&qorig=Airport:MSP&qdest=Airport:LAS&qstart=1654920000000&qend=1654920000000&qtravelers=1&qrooms=0&qow=true&qfcc=e&qdctid=35107&qdac=
+    LAS&qshour=-1&qehour=-1&resid=a9d8fd2836a9bd36f3bcb47c67889bf7&bookid=E-13941ef0715&seekProv=&qadults=1&qchild=0&qns=false&qnearby=0&qnearbyo=false&qnearbyd=false&qcages=&q
+    infantseat=0&qinfantlap=0&qsenior=0&pgNum=1&copyId=0&iar=1&stid=844599448&ah=EO3fZfsQZKxnR$eHF_yOBz7405upygsq7QjWShXpzXQ&pj=J9LBDGpR3_nTo3NDr9d4xw==&_sid_=R-4fYbrF$gU4NmUf4mZ
+    d$ZY-8vfb1baYyXAyvtPnRVgO08dtugo5R4Cytip2X7gad&prvcurl=')">\n` +
+    '<div class="content-col with-price-groups">\n' +
+    '<div class="icon">\n' +
+    '<img alt="delta.com" src="/picasso/svg?url=/kimg/a/suppliers/3002593/vector-logos/29fead0f4edf4755.svg&padX=5&padY=5" />\n' +
+    '</div>\n' +
+    '<div class="content">\n' +
+    '<div class="inlineAdHeadline">Start Your Next Adventure</div>\n' +
+    '<div class="inlineAdDescription">\n' +
+    '<span>Dream, Plan and Discover Something New.</span>\n' +
+    '</div>\n' +
+    '<ul class="inlineAdPriceList clearfix hasWideCurrency ">\n' +
+    '<li class="inlineAdPriceRow ">\n' +
+    '<a href="/s/clickthrough.jsp?ctyp=InlineOpaqueAdBooking&ptyp=F&orig=F..RP..M1&octid=&plid=9964610&cpnid=7074057&pid=DeltaInlinedesk_FIOAD_US&prv=DeltaInlinedesk_FIOAD_US&s
+    rch=TcAiqDiOd5&ploc=US&displayRail=Rslt&rank=1&atype=inline&prc=398.61&pgrp=1&xpExt=&aidExt=&lid=DeltaInlinedesk_FIOAD_US-TcAiqDiOd5&qorig=Airport:MSP&qdest=Airport:LAS&qst
+    art=1654920000000&qend=1654920000000&qtravelers=1&qrooms=0&qow=true&qfcc=e&qdctid=35107&qdac=LAS&qshour=-1&qehour=-1&resid=a9d8fd2836a9bd36f3bcb47c67889bf7&bookid=E-13941ef0
+    715&seekProv=&qadults=1&qchild=0&qns=false&qnearby=0&qnearbyo=false&qnearbyd=false&qcages=&qinfantseat=0&qinfantlap=0&qsenior=0&pgNum=1&copyId=0&iar=1&stid=844599448&ah=EO3fZ
+    fsQZKxnR$eHF_yOBz7405upygsq7QjWShXpzXQ&pj=J9LBDGpR3_nTo3NDr9d4xw==&_sid_=R-4fYbrF$gU4NmUf4mZd$ZY-8vfb1baYyXAyvtPnRVgO08dtugo5R4Cytip2X7gad&prvcurl=" target="_blank" 
+    onclick="event.cancelBubble = true; if(event.stopPropagation) { event.stopPropagation() };" rel="nofollow" tabindex="-1">\n' +
+    '<span class="inlineAdPrice">$399</span>\n' +
+    '<span class="inlineAdStops">nonstop </span>\n' +
+    '<span class="inlineAdSelect hidden">View Deal</span>\n' +
+    '</a>\n' +
+    '</li>\n' +
+    '</ul>\n' +
+    '<div class="inlineAdFooter clean">\n' +
+    '<span class="footerSite">delta.com | </span> <span class=" sponsoredTag">\n' +
+    'Ad\n' +
+    '</span>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="price-col inlineAdPriceColumn right-alignment get-in-formation">\n' +
+    '<div class="inlineAdSelect">\n' +
+    '<div class="bookitselect">\n' +
+    '<div class="featured-provider">\n' +
+    '<div class="price">\n' +
+    '$399\n' +
+    '</div>\n' +
+    '<div class="provider-brand">Delta</div>\n' +
+    '</div>\n' +
+    '<a class="ui-button Button-Wire" href="javascript:void(0)" target="" rel="nofollow"\n' +
+    'onclick=""\n' +
+    'aria-label="Ad: View deal from delta.com"\n' +
+    '>\n' +
+    '<div class="view-deal">\n' +
+    'View Deal\n' +
+    '</div>\n' +
+    '</a>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div id="CdpP"\n' +
+    'class="Base-Results-HorizonResult Flights-Results-FlightResultItem phoenix-rising get-in-formation extra-vertical-spacing hover-actions get-in-formation \n' +
+    'sleek rp-contrast "\n' +
+    'page-idx="1"\n' +
+    'data-resultId="14d8790e27914c6f9747e52ea03b1dc3"\n' +
+    'tabindex="0"\n' +
+    'aria-label="Result number 1: $133 from FlightHub."\n' +
+    'aria-describedby="CdpP-describedby"\n' +
+    'tabbable\n' +
+    '>\n' +
+    '<nav class="aria-controls">\n' +
+    '<p id="CdpP-describedby" style="display: none">Leg 1: Provided by Spirit Airlines. Departs from Minneapolis, MN - Minneapolis St Paul on 6/11 at 4:30 pm,
+     lands in Las Vegas, NV - Harry Reid Intl on 6/11 at 5:57 pm. nonstop. Total duration: 3h 27m.</p>\n' +
+    '<a href="javascript:void(0)" id="CdpP-skip">Go to next result</a>\n' +
+    '<a href="#CdpP-price">Go to price</a>\n' +
+    '<a href="#CdpP-info">Go to flight info</a>\n' +
+    '<div id="CdpP-aria-details"\n' +
+    'class="Flights-Results-DetailsLink "\n' +
+    'aria-labelledby="CdpP-aria-details-open"\n' +
+    '>\n' +
+    '<button id="CdpP-aria-details-toggleMore" class="Button-No-Standard-Style detailsToggle" ria-pressed="false">\n' +
+    '<span id="CdpP-aria-details-open" class="openText">See details</span>\n' +
+    '<span id="CdpP-aria-details-close" class="closeText">Hide details</span>\n' +
+    '</button>\n' +
+    '</div>\n' +
+    '</nav>\n' +
+    '<div class="resultWrapper">\n' +
+    '<div id="EJvX" class="Common-Results-ResultActionsMenu _is5 _iP2 _iaf _iP5 _iP1 _iP- _ikc _jIa _jH9 _iCU _iCV _jH8 _icO _h-Z _icP _iP6 _jH- _iP7 _iai _iP8 _iya _iP9 _jIc _ic1 
+    _iQa _iQb _ic0 _mc" aria-hidden="true" >\n' +
+    '<div id="EJvX-shareCol"\n' +
+    'class="_iaB _iQj _iQe _iQf _ic2 _ic3">\n' +
+    '<button id="EJvX-share" class="Button-No-Standard-Style _ixV _ixW _irb _iVf _h-Y _iVb _iQh" tabindex="0" aria-label="Share this item" >\n' +
+    '<svg aria-hidden="true" class="_ieE _ieB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path class="share-up-arrow" d="M15.21 5.22L9.99 0 4.77 
+    5.22l1.66 1.66L8.81 4.5v9.63h2.35V4.5l2.39 2.38 1.66-1.66z"/><path d="M17.63 20H2.35A2.35 2.35 0 0 1 0 17.65v-5.88h2.35v5.88h15.28v-5.88H20v5.88A2.35 2.35 0 0 1 17.63 20z"/><
+    /svg>\n' +
+    '</button>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="resultInner" id="CdpP-inner">\n' +
+    '<div class="inner-grid keel-grid">\n' +
+    '<div class="col-info result-column">\n' +
+    '<div class="top-row">\n' +
+    '<div class="labels">\n' +
+    '</div>\n' +
+    '<div id="eE9H" class="Ui-Trips-Components-SaveToTrips-SaveResultButtonWrapper-container"></div>\n' +
+    '</div>\n' +
+    '<div id="CdpP-mainInfo" class="mainInfo">\n' +
+    '<div id="CdpP-info" class="Flights-Results-ResultInfo" >\n' +
+    '<ol class="flights">\n' +
+    '<li class="flight ">\n' +
+    '<div id="CdpP-info-leg-0" class="Flights-Results-LegInfo Flights-Results-LegInfoSleek no-checkbox no-carry-on-column" >\n' +
+    '<div class="container">\n' +
+    '<div class="section stacked-carriers" \n' +
+    '>\n' +
+    '<div class="leg-carrier">\n' +
+    '<img src="https://content.r9cdn.net/rimg/provider-logos/airlines/v/NK.png?crop=false&width=108&height=92&fallback=default1.png&_v=ee25ddeebebbac3394dc29d6b32e4b7b" 
+    alt="Spirit Airlines logo"/>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="section times">\n' +
+    '<div class="top">\n' +
+    '<span class="time-pair" >\n' +
+    '<span class="depart-time base-time">4:30 </span>\n' +
+    '<span class="time-meridiem meridiem">pm</span>\n' +
+    '</span>\n' +
+    '<span class="sep">&ndash;</span>\n' +
+    '<span class="time-pair" >\n' +
+    '<span class="arrival-time base-time">5:57 </span>\n' +
+    '<span class="time-meridiem meridiem">pm</span>\n' +
+    '</span>\n' +
+    '</div>\n' +
+    '<div class="bottom " dir="ltr">\n' +
+    'Spirit Airlines\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="section stops">\n' +
+    '<div class="top" >\n' +
+    '<span class="stops-text">\n' +
+    'nonstop </span>\n' +
+    '</div>\n' +
+    '<div class="bottom">\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="section duration allow-multi-modal-icons">\n' +
+    '<div class="top" >\n' +
+    '3h 27m </div>\n' +
+    '<div class="bottom" >\n' +
+    '<div id="CdpP-info-leg-0-origin-airport"\n' +
+    'class="bottom-airport"\n' +
+    'title="Minneapolis St Paul">\n' +
+    '<span class="airport-name" dir="auto">\n' +
+    'MSP\n' +
+    '</span>\n' +
+    '</div>\n' +
+    '<span class="sep">&dash;</span>\n' +
+    '<div id="CdpP-info-leg-0-destination-airport"\n' +
+    'class="bottom-airport"\n' +
+    'title="Las Vegas Harry Reid Intl">\n' +
+    '<span class="airport-name" dir="auto">\n' +
+    'LAS\n' +
+    '</span>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</li>\n' +
+    '</ol>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div id="CdpP-extra-info" class="Flights-Results-ExtraFlightInfo sleek">\n' +
+    '<div class="section hbo">\n' +
+    '<div id="CdpP-extra-info-hbo" class="Flights-Results-PromotedBookingLink right" >\n' +
+    '<div id="14d8790e27914c6f9747e52ea03b1dc3" class="Flights-Results-UpliftPromotion">\n' +
+    '<div\n' +
+    'id="c3a-B-upliftContainer"\n' +
+    'class="upliftContainer"\n' +
+    'data-id="14d8790e27914c6f9747e52ea03b1dc3"\n' +
+    'data-up-price-value="13300"\n' +
+    'data-up-price-type="departure_option"\n' +
+    'data-up-price-model="per_person"\n' +
+    'data-up-taxes-included="true"\n' +
+    'data-up-disable-lightbox\n' +
+    'style="display:none"\n' +
+    '>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div id="CdpP-priceSection" class="col-price result-column js-no-dtog">\n' +
+    '<div id="CdpP-price" class="Flights-Results-FlightPriceSection right-alignment sleek ">\n' +
+    '<div class="top-row">\n' +
+    '<div class="left-column">\n' +
+    '<div id="CdpP-price-flight-fee-icons" class="Flights-Results-FlightFeeIcons _iai" >\n' +
+    `<div id="CdpP-price-flight-fee-icons-carryOnBags" class='_ifh _iUZ _iaf _fI _kKc _ioF _irF _irG _iEz _jhX _iak _iyc _imx _gB _ian _8X _kKf c0zHl-badge'>\n` +
+    '<div class="_h-8 _iaB _iFA _irE">\n' +
+    '<svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true"><use xlink:href="#-images-kameleon-icons-utilities-bag-carryon"/></svg> </div>\n' +
+    '<div class="_h-8 _iab _jw2 _h5" >\n' +
+    '0\n' +
+    '</div>\n' +
+    '</div>\n' +
+    `<div id="CdpP-price-flight-fee-icons-checkedBags" class='_ifh _iUZ _iaf _fI _kKc _ioF _irF _irG _iEz _jhX _iak _iyc _imx _gB _ian _8X _i2Y c0zHl-badge'>\n` +
+    '<div class="_h-8 _iaB _iFA _irE">\n' +
+    '<svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true"><use xlink:href="#-images-kameleon-icons-utilities-bag-checked"/></svg> </div>\n' +
+    '<div class="_h-8 _iab _jw2 _h5" >\n' +
+    '0\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div id="CdpP-price-bookingSection" class="booking" >\n' +
+    '<div class="multibook-dropdown">\n' +
+    '<div id="c2TBh-mb" class="Common-Booking-VerticalMultiBookDropdown Common-Booking-CategorizedVerticalMultiBookDropdown align-right with-dropdown">\n' +
+    '<div id="c2TBh-mb-above-but'... 26369 more characters,
+  bufferedScripts: [
+    'R9.events.publish("flights.results.savedItems.update", {"presentation":null,"openDetails":{},"inlineTravelAudienceAdSlots":[],"tripsMap":{},"listSize":0,"expiryMessage":null,
+      "savedSearchId":null});new R9.flights.results.scripts.FlightAboveHeaderContent("SgYb", {\n' +
+      '        "searchId": "TcAiqDiOd5",\n' +
+      '        "flexDialogLoaded": false,\n' +
+      '        "airlineMatrixLoaded": false\n' +
+      '    });new R9.common.kn.rp.Inline("inline-1", {"presentation":null,"adKey":"TcAiqDiOd5a9d8fd2836a9bd36f3bcb47c67889bf71",
+        "trackUrl":"\\/s\\/redirect\\/tracking?url=aHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvZGRtL3RyYWNraW1waS9OMzg1NjAyLjE5MDkxMzNLQVlBSy9CMjY5NDcxNjguMzIzMTQ0MDA
+        3O2RjX3Rya19haWQ9NTE2MzE2NzY0O2RjX3Rya19jaWQ9MTUzMzE4NzcwO29yZD1UY0FpcURpT2Q1Pw&h=_SDeb7w4Gu2bvoy04ClGSomIY7U&plid=9964610&searchID=TcAiqDiOd5",
+        "providerCode":"DeltaInlinedesk_FIOAD_US","providerName":"delta.com"});new R9.flights.results.DetailsLink("CdpP-aria-details", 
+        {"presentation":null,"open":false,"resultId":"14d8790e27914c6f9747e52ea03b1dc3","uiResultId":"14d8790e27914c6f9747e52ea03b1dc3",
+          "leg":null,"tabId":null,"fullClick":false,"loggingPrefix":null,"showOpenForAllTabs":false});new R9.common.results.ResultActionsMenu("EJvX", {\n' +
+      '    shareTooltipText: "Share"\n' +
+      '}, {"presentation":null,"resultId":"14d8790e27914c6f9747e52ea03b1dc3","uiResultId":"14d8790e27914c6f9747e52ea03b1dc3","searchId":"TcAiqDiOd5","resultElementId":"CdpP",
+        "businessEventState":null,"isBusinessMode":false,"alwaysVisible":false,"tooltipCss":null,"useCityNameSharing":false,"destinationName":"Las Vegas","isInitiallyPinned":false,"
+        killWatchlist":true,"detailsEnabled":false,"pinSavedText":true,"tooltipDirection":"top","checkHoverSupport":true,"trackingEnabled":true});R9.ComponentManager.register
+        ("eE9H", {\n' +
+      '                destroy: function() {\n' +
+      '                    ReactDOM.unmountComponentAtNode(document.getElementById("eE9H"));\n' +
+      '                }\n' +
+      '            });new R9.common.widgets.tip.ToolTip("CdpP-info-leg-0-origin-airport", {"presentation":null,"theme":"DEFAULT","testAttributes":null,"phoenixRising":false,
+        "target":"CdpP-info-leg-0-origin-airport","positionTarget":null,"content":"                        Minneapolis St Paul\\n                            \\n    ","position":
+        "top","fallbackPosition":null,"orientation":"middle","forceDesiredPosition":false,"activation":"hover","subNameSpace":"","alwaysRendered":false,"color":"black","edgeOffset":
+        3,"orientationOffset":null,"offsetAgainstEdge":true,"closeOnBodyClick":true,"track":null,"baseClass":"cooltip-component","delay":0,"closeDelay":0,"keepOpenOnContentHover":
+        true,"keepOpenOnPositionTargetHover":false,"extraClass":"size-bold uikit ","isComponent":true,"size":"uikit","autoClose":0});new R9.common.widgets.tip.ToolTip(
+        "CdpP-info-leg-0-destination-airport", {"presentation":null,"theme":"DEFAULT","testAttributes":null,"phoenixRising":false,"target":"CdpP-info-leg-0-destination-airport",
+          "positionTarget":null,"content":"                        Las Vegas Harry Reid Intl\\n                            \\n    ","position":"top","fallbackPosition":null,
+          "orientation":"middle","forceDesiredPosition":false,"activation":"hover","subNameSpace":"","alwaysRendered":false,"color":"black","edgeOffset":3,"orientationOffset":null,
+          "offsetAgainstEdge":true,"closeOnBodyClick":true,"track":null,"baseClass":"cooltip-component","delay":0,"closeDelay":0,"keepOpenOnContentHover":true,
+          "keepOpenOnPositionTargetHover":false,"extraClass":"size-bold uikit ","isComponent":true,"size":"uikit","autoClose":0});new R9.flights.results.LegInfo("CdpP-info-leg-0",
+           {"presentation":null,"legNumber":0,"splitBookingView":false,"resultId":"14d8790e27914c6f9747e52ea03b1dc3","signature":"MSPLAS1654963200000NK1691","uiKitTooltips":true,
+            "modalView":false,"tooltipColor":"black","tooltipExtraClass":"","hasSpecificLegCheckbox":false,"hasStyleJamCheckbox":false,"useFocusOutlines":true});new R9.flights.
+            results.UpliftPromotion("c3a-B", {\n' +
+      '            msg: {\n' +
+      '                UPLIFT_INFO_ICON_TEXT: "<div> <div class=\\"header\\">Make Your Ideal Trip Affordable<\\/div> 
+      <div class=\\"primaryText\\">Pay over time from only {0}\\/month<sup>*<\\/sup><\\/div><div class=\\"primaryText\\">Just select
+         <span>Uplift Pay Monthly<\\/span> at checkout.<\\/div><div class=\\
+         "secondaryText\\"><sup>*<\\/sup>Based on the {1} trip price. First payment due at time of booking plus {2} monthly payments of {3} 
+         at {4} APR. Rates may range from 4.01% to 35.99%. Eligibility is not guaranteed.<\\/div><\\/div>"\n' +
+      '            }\n' +
+      '        }, {"presentation":null,"travelers":1,"whiskyOptionPrice":133,"resultId":"14d8790e27914c6f9747e52ea03b1dc3","bookingHref":"\\
+      /book\\/flight?code=TcAiqDiOd5.hz3dho0eM0QDzQq2dWkU9A.13259.14d8790e27914c6f9747e52ea03b1dc3&h=a5d306a25443&_kw_pbranded=true&sub=E0e2e801d667&_kw_hasUplift=true",
+      "legs":[{"originCode":"MSP","destinationCode":"LAS","departureDate":"2022-06-11"}],"currencySymbol":"$","upliftCustomerId":"UP-38829922-2","tooltipExtraCssClass":
+        "Flights-Results-UpliftPromotion-Tooltip"});new R9.flights.results.PromotedBookingLink("CdpP-extra-info-hbo", {"presentation":null,"isDirectBooking":false,
+          "providerCode":null,"providerName":null});new R9.flights.results.ExtraFlightInfo("CdpP-extra-info", {"presentation":null,"placeholderEnabled":false,
+            "resultId":"14d8790e27914c6f9747e52ea03b1dc3","uiResultId":"14d8790e27914c6f9747e52ea03b1dc3","clickoutDetailsDialog":false,"sponsoredResultImpressionTrackingEnabled":false,
+            "sponsoredResultTrackUrl":null,"adKey":null,"thirdPartyImpressionsFeatureEnabled":false});new R9.common.widgets.tip.ToolTip("CdpP-price-flight-fee-icons",
+             {"presentation":null,"theme":"DEFAULT","testAttributes":{"data-test-price-breakdown-tooltip":""},"phoenixRising":false,"target":"CdpP-price-flight-fee-icons",
+              "positionTarget":"CdpP-price-flight-fee-icons","content":"            <div id=\\"WqSO\\" class=\\"Common-Booking-PriceBreakdownTooltip _i3t\\">\\n              
+                \\n                <div class=\\"_iVh _iEG _fI _ixV _igh _ipJ _im8 _gB _ij1\\">\\n            Price Breakdown        <\\/div>\\n\\n       
+                 <div class=\\"_iad _ibG _ipJ _im8\\" role=\\"list\\">\\n            <div class=\\"\\" role=\\"group\\">\\n                                 
+                    <div class=\\"_isE _ibV _ivE _icn _iz6 _ico _idj _ihz _iaf _ilc _iai\\" role=\\"listitem\\">\\n                      
+                      <div class=\\"_irE _iaQ _iFA\\">\\n                                  
+                        \\n<svg class=\\"_ijL _h-2 _iae _iam _iWM _i3o RgcV-line-item-svg\\"
+                         xmlns=\\"http:\\/\\/www.w3.org\\/2000\\/svg\\" viewBox=\\"0 0 200 200\\" 
+                         aria-hidden=\\"true\\"><use xlink:href=\\"#-images-kameleon-icons-utilities-ticket-multi_ijL_h-2_iae_iam_iWM_i3oRgcV-line-item-svg\\"\\/><\\/svg>        
+                                         <\\/div>\\n                        <div class=\\"_ijL _iVe\\">\\n                                                          
+                                           Ticket price                                                                                <\\/div>\\n\\n                
+                                                   <div class=\\"_i21 _ii0 _ijL RgcV-line-item-price\\" >\\n                            $133\\n                     
+                                                      <\\/div>\\n                    <\\/div>\\n                \\n                \\n                                  
+                                                        <div class=\\"_isE _ibV _ivE _icn _iz6 _ico _idj _ihz _iaf _ilc _iai\\" role=\\"listitem\\">\\n                       
+                                                         <div class=\\"_irq _h-- _iq1 _iO0 _icn _ipm\\">\\n                                   
+                                                          \\n<svg class=\\"_ijL _h-2 _iae _iam _iWM RgcV-line-item-svg\\" xmlns=\\"http:\\/\\/www.w3.org\\/2000\\/svg\\" 
+                  viewBox=\\"0 0 200 200\\" aria-hidden=\\"true\\"><use xlink:href=\\"#-images-kameleon-icons-utilities-bag-carryon_ijL_h-2_iae_iam_iWMRgcV-line-item-svg\\"\\/><\\/svg>  
+                                        <\\/div>\\n                        <div class=\\"_ijL _iVe\\">\\n                            Carry-on bag\\n                      
+                                          <\\/div>\\n                                                    <a href=\\"javascript:void(0)\\"\\n                               
+  class=\\"js-add-bag-link _i21 _ii0 _fI _gB _i3k _ii2 RgcV-line-item-price\\"\\n                               data-filterName=\\"cfc\\"\\n                            
+  >\\n                                Add                            <\\/a>\\n                                            <\\/div>\\n                                    
+  \\n                                    <div class=\\"_isE _ibV _ivE _icn _iz6 _ico _idj _ihz _iaf _ilc _iai\\" role=\\"listitem\\">\\n                       
+   <div class=\\"_irE _iaQ _iFA\\">\\n                                    \\n<svg class=\\"_ijL _h-2 _iae _iam _iWM RgcV-line-item-svg\\"
+    xmlns=\\"http:\\/\\/www.w3.org\\/2000\\/svg\\" viewBox=\\"0 0 200 200\\" aria-hidden=\\"true\\">
+    <use xlink:href=\\"#-images-kameleon-icons-utilities-bag-checked_ijL_h-2_iae_iam_iWMRgcV-line-item-svg\\"\\/><\\/svg>                        
+    <\\/div>\\n                        <div class=\\"_ijL _iVe\\" >\\n                            Checked bag\\n                      
+      <\\/div>\\n                                                    <a href=\\"javascript:void(0)\\"\\n                               
+      class=\\"js-add-bag-link _i21 _ii0 _fI _gB _i3k _ii2 RgcV-line-item-price\\"\\n                               data-filterName=\\"bfc\\"\\n                           
+       >\\n                                Add                            <\\/a>\\n                                            <\\/div>\\n                                            
+       <div class=\\"_ibV _i3m _iz6 _i3l\\" role=\\"listitem\\">\\n                                                            <div class=\\"_igj _iak _i3n RgcV-line-item-subsection-text\\">\\n                                                                                                                                                            <span>Up to 62in total<\\/span>\\n                                                                                                            <\\/div>\\n                                                    <\\/div>\\n                                                                        \\n                \\n                            <\\/div>\\n\\n            <div class=\\"_idG _ikn _ibc _yS _ioZ\\" role=\\"group\\">\\n                \\n                <div class=\\"_ibV _iig _iz6 _ioK _idj '... 88412 more characters
+  ],
+  bufferedHTML: [],
+  bufferedSVGs: [
+    '<symbol id="-images-kameleon-icons-utilities-bag-carryon"  xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 200 200"><path d="M126.65 92.48h-53.3a13.29 13.29 0 00-13.3 13.3v53.4a13.29 13.29 0 0013.3
+     13.3v6.7h13.3v-6.7h26.7v6.7h13.3v-6.7a13.29 13.29 0 0013.3-13.3v-53.3a13.38 13.38 0 00-13.3-13.4zM88.42
+      34.12a3.33 3.33 0 013.3-3.3H95v3.3h13.3v-3.3h3.3a3.33 3.33 0 013.3 3.3v53.3h10v-53.3a13.29 13.29 0
+       00-13.3-13.3H91.72a13.29 13.29 0 00-13.3 13.3v53.3h10z"/></symbol>',
+    '<symbol id="-images-kameleon-icons-utilities-bag-checked"  xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 200 200"><path d="M84.35 40.9h-11.9V25.1a15.83 15.83 0 0115.8-15.8H112a15.83 15.83 0
+     0115.8 15.8v15.8H116V25.1a3.9 3.9 0 00-3.9-3.9H108v3.9H92.05v-3.9h-3.8a3.9 3.9 0 00-3.9 3.9zm55
+      7.9h-55.2v17.7L96 78.3v34H68.35v-34l11.8-11.8V48.8h-19.6a15.83 15.83 0 00-15.8 15.8V167a15.83 15.83 0 0015.8 15.8v7.9h15.8v-7.9h47.3v7.3h15.8v-7.3a15.83 15.83 0
+       0015.8-15.8V64.5a15.9 15.9 0 00-15.9-15.7zm-61.1 27.6a3.9 3.9 0 003.9 3.9a4 4 0 003.9-3.9a3.9 3.9 0 10-7.8 0z"/></symbol>',
+    '<symbol id="-images-kameleon-icons-utilities-ticket-multi_ijL_h-2_iae_iam_iWM_i3oRgcV-line-item-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path d="M173.636 40H26.364C17.326 40 10 47.276 10 56.25v56.875c0 8.975 7.326 16.25 16.364 16.25h147.272c9.037 0 16.364-7.275 16.364-16.25V56.25c0-8.974-7.
+    326-16.25-16.364-16.25zm-32.727 77.188c-10.816 0-10.833-16.25 0-16.25c10.816 0 10.833 16.25 0 16.25zm0-24.376c-10.816 0-10.833-16.25 0-16.25c10.816 0 10.833 16.25
+     0 16.25zm0-24.374c-10.816 0-10.833-16.25 0-16.25c10.816 0 10.833 16.25 0 16.25zM18.182 137.5h147.273L41.627 169.657c-8.849 1.826-17.512-3.816-19.352-12.603L18.182 137.5z"/></symbol>',
+
+    '<symbol id="-images-kameleon-icons-utilities-bag-carryon_ijL_h-2_iae_iam_iWMRgcV-line-item-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path
+     d="M126.65 92.48h-53.3a13.29 13.29 0 00-13.3 13.3v53.4a13.29 13.29 0 0013.3 13.3v6.7h13.3v-6.7h26.7v6.7h13.3v-6.7a13.29 13.29 0 0013.3-13.3v-53.3a13.38 13.38 0 00-13.3-13.4zM88.42 34.12a3.33 3.33 0 013.3-3.3H95v3.3h13.3v-3.3h3.3a3.33 3.33 0 013.3 3.3v53.3h10v-53.3a13.29 13.29 0 00-13.3-13.3H91.72a13.29 13.29 0 00-13.3 13.3v53.3h10z"/></symbol>',
+    '<symbol id="-images-kameleon-icons-utilities-bag-checked_ijL_h-2_iae_iam_iWMRgcV-line-item-svg"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path 
+    d="M84.35 40.9h-11.9V25.1a15.83 15.83 0 0115.8-15.8H112a15.83 15.83 0 0115.8 15.8v15.8H116V25.1a3.9 3.9 0 00-3.9-3.9H108v3.9H92.05v-3.9h-3.8a3.9 3.9 0 00-3.9 3.9zm55 7.9h-55.2v17.7L96 78.3v34H68.35v-34l11.8-11.8V48.8h-19.6a15.83 15.83 0 00-15.8 15.8V167a15.83 15.83 0 0015.8 15.8v7.9h15.8v-7.9h47.3v7.3h15.8v-7.3a15.83 15.83 0 0015.8-15.8V64.5a15.9 15.9 0 00-15.9-15.7zm-61.1 27.6a3.9 3.9 0 003.9 3.9a4 4 0 003.9-3.9a3.9 3.9 0 10-7.8 0z"/></symbol>',
+    '<symbol id="info-icon" width="12px" height="12px" viewBox="-1 -0.5 22 22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n' +
+      '    <path d="M9.98920245,8.1799591e-05 C4.48106339,8.1799591e-05 0,4.48118609 0,9.98928425 C0,15.4976278 4.48110429,19.9788139 9.98920245,19.9788139 C15.
+      4977505,19.9788139 19.9789366,15.4976687 19.9789366,9.98928425 C19.9788957,4.48122699 15.4977505,8.1799591e-05 9.98920245,8.1799591e-05 Z M9.98920245,
+      16.9169325 C6.16916155,16.9169325 3.06159509,13.809407 3.06159509,9.98936605 C3.06159509,6.16948875 6.16912065,3.06196319 9.98920245,3.06196319 C13.8092843,
+      3.06196319 16.9172597,6.16948875 16.9172597,9.98936605 C16.9172597,13.8094479 13.8092843,16.9169325 9.98920245,16.9169325 Z"></path>\n' +
+      '    <path d="M9.98920245,8.45873211 C9.38564417,8.45873211 8.9004908,8.94797546 8.9004908,9.55198364 L8.9004908,14.4071575 C8.9004908,15.0112065 9.38564417,15.5006135 
+      9.98920245,15.5006135 C10.5932515,15.5006135 11.077955,15.0111656 11.077955,14.4071575 L11.077955,9.55198364 C11.0779141,8.94797546 10.5932515,8.45873211 9.98920245,8.
+      45873211 Z"></path>\n' +
+      '    <path d="M9.98920245,4.41280164 C9.17329243,4.41280164 8.51263804,5.07366053 8.51263804,5.88891616 C8.51263804,6.70421268 9.17325153,7.36507157 9.98920245,7.3650715
+      7 C10.8042945,7.36507157 11.464908,6.70421268 11.464908,5.88891616 C11.4648671,5.07366053 10.8042945,4.41280164 9.98920245,4.41280164 Z"></path>\n' +
+      '</symbol>',
+    '<symbol id="-images-kameleon-icons-utilities-medal_iby_in6"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill-rule="evenodd" clip-rule="evenodd" 
+    d="M99.828 20.379c36.15 0 65.455 29.305 65.455 65.455c0 28.827-18.636 53.302-44.517 62.034l.887-.303l.003 32.814l-21.818-14.545l-21.818 14.545l-.01-32.819l-.257-.
+    088c-25.288-9.058-43.379-33.235-43.379-61.639c0-36.149 29.305-65.454 65.454-65.454zm0 14.545c-28.116 0-50.909 22.793-50.909 50.909s22.793 50.909 50.909 50.909s50.909-22
+    .793 50.909-50.909s-22.792-50.909-50.909-50.909zM97.87 58.012c.706-1.505 2.601-1.672 3.572-.502l.317.502l7.323 15.534a2.15 2.15 0 001.11 1.098l.508.149l16.377 2.495c1.58
+    4.241 2.317 2.117 1.517 3.443l-.325.418l-11.779 12.088a2.242 2.242 0 00-.647 1.437l.022.553l2.81 17.048c.258 1.674-1.243 2.98-2.712 2.556l-.438-.18l-14.646-8.049a2.033 2.
+    033 0 00-1.525-.2l-.49.2l-14.646 8.049c-1.445.81-3.124-.295-3.183-1.886l.033-.49l2.782-17.048a2.352 2.352 0 00-.295-1.554l-.329-.436l-11.837-12.088c-1.15-1.176-.69-3.146.6
+    97-3.723l.495-.138l16.377-2.495a2.24 2.24 0 001.329-.794l.289-.454l7.294-15.533z"/></symbol>',
+    '<symbol id="-images-kameleon-icons-utilities-check_dx_ih0_ih1"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M165.101 38.273L71.33 141.421l-37.69-29.
+    314l-12.279 15.787l45 35a10 10 0 0 0 13.539-1.167l100-110l-14.799-13.454z"/></symbol>',
+    '<symbol id="-images-horizon-common-icon-checkmark"  viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M24.81 6.498l-1.563-1.356a.593.593 
+    0 0 0-.813.04l-11.888 12.64-6.173-5.353a.593.593 0 0 0-.813.04l-1.412 1.5a.54.54 0 0 0 .042.78l8.15 7.069a.57.57 0 0 0 .28.128.591.591 0 0 0 .556-.168l13.676-14.54a.54.54 0
+     0 0-.042-.78"/></symbol>\n',
+    '<symbol id="-images-horizon-common-icon-x-icon"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.85 9.93" class="x-icon-x">\n' +
+      '    <path style="fill:none;stroke:currentColor;stroke-miterlimit:10" d="M.71.79l8.43 8.43M9.14.71L.71 9.14"/>\n' +
+      '</symbol>\n'
+  ],
+  clientTemplates: [],
+  react: {
+    scripts: [
+      'https://content.r9cdn.net/res/combined.js?v=7dc611e6548a76792778daf2a8c7b80a55c5382c-keel-headings-update&cluster=4'
+    ],
+    styles: [],
+    brand: [ 'kayak' ],
+    locale: 'en-us',
+    strings: {
+      'ui/authentication//LOGIN_HEADER_WELCOME': 'Good to see you again',
+      'ui/authentication//REGISTRATION_TRACKING_CONSENT_LABEL': "I hereby confirm that I have carefully read the {0} <a href={1} target='_blank'>Terms & Conditions</a> and <a href={2} target='_blank'>Privacy Policy</a>, fully aware of their contents, fully agree with them and treat them as binding for me.",
+      'ui/authentication//AUTH_LOGIN_BUTTON': 'Sign in',
+      'ui/authentication//ONBOARDING_BUTTON_DECLINE_TEXT': 'Not now',
+      'ui/authentication//MAGIC_LINK_DONE_EXISTING_USER_DESC': 'We just sent a magic link to {0}. Click on the link in the email to sign in.',
+      'ui/authentication//MAGIC_LINK_DONE_NEW_RETURN': 'Return to this screen after you click on the link to complete sign-up.',
+      'ui/authentication//AUTH_LOGIN_BUTTON_PROCESSING': 'Signing in...',
+      'ui/authentication//LOGIN_LINK_TO_REGISTER': 'Register',
+      'ui/authentication//AUTH_SIGN_UP_BUTTON': 'Sign up',
+      'ui/authentication//AUTH_FORGOT_FORM_SUCCESS_BUTTON': 'Close',
+      'ui/dialog/components//DIALOG_CLOSE_ARIA_LABEL': 'Close',
+      'ui/authentication//PASSWORD_TOO_SHORT': '<b>Password too short.</b> <br />Passwords must contain at least 8 characters.',
+      'ui/authentication//AUTH_FORGOT_FORM_SUBMIT': 'Send',
+      'ui/authentication//CONTINUE_WITH_BDC_LABEL': 'Continue with Booking.com',
+      'ui/authentication//AUTH_EMAIL_ME': 'Email me {0}&#39;s favorite deals',
+      'ui/results/components//WATCH_RESULT_ACTION_SAVED': 'Saved',
+      'ui/authentication//AUTH_SIGN_UP_BUTTON_PROCESSING': 'Signing up...',
+      'ui/authentication//CONTINUE_WITH_NAVER': 'Continue with NAVER',
+      'ui/authentication//APPLE_LOGIN': 'Apple',
+      'ui/authentication//AUTH_FORGOT_FORM_BACK': 'Back to sign in',
+      'ui/authentication//MAGIC_LINK_CONTINUE': 'Continue',
+      'ui/authentication//AUTH_SIGNUP_FORM_BRAND_ICON_ARIA': 'kayak brand icon',
+      'ui/authentication//ERROR_ICON_ARIA_LABEL': 'Error:',
+      'ui/authentication//CONTINUE_WITH_GOOGLE': 'Continue with Google',
+      'ui/authentication//REGISTER_HEADER_DESC': 'Create an account now for access to member-only deals.',
+      'ui/authentication//CONTINUE_WITH_EMAIL_EXTERNAL_AUTH_LABEL': 'No, continue with email',
+      'ui/authentication//SIGN_IN_FORGOT_PASSWORD': 'Forgot password?',
+      'ui/authentication//BRAND_FAMILY_LOGO_PREFIX': 'from {0}',
+      'ui/authentication//FACEBOOK_LOGIN': 'Facebook',
+      'ui/authentication//AUTH_PASSWORD_PLACEHOLDER': 'Password',
+      'ui/authentication//MLINK_CONTINUE_WITH_EMAIL_TITLE': 'Continue with email',
+      'ui/authentication//CONTINUE_WITH_FACEBOOK': 'Continue with Facebook',
+      'ui/results/components//REMOVE_LINK_TEXT': 'Remove',
+      'ui/authentication//LOCKED_TITLE': 'Your account has been locked for security purposes',
+      'ui/authentication//LOGIN_HEADER_DESC': 'Sign in for member-only deals and access to your Trip details.',
+      'ui/authentication//MAGIC_LINK_EMAIL_ADDRESS_PLACEHOLDER': 'Email address',
+      'ui/authentication//LOGIN_PASSWORD_HEADER': 'Enter your password',
+      'ui/authentication//AUTH_REMEMBER_ME': 'Remember me',
+      'ui/authentication//MAGIC_LINK_HEADER': "Let's create your account",
+      'ui/authentication//AUTH_FORGOT_FORM_SUCCESS_HEADING': 'Success!',
+      'ui/authentication//LOGIN': 'Sign in',
+      'ui/authentication//MAGIC_LINK_SEND_LINK_BUTTON': 'Send magic link',
+      'ui/authentication//ONBOARDING_HEADER_V2': 'Your {0} account is set. {1} Add your business profile in a flash.',
+      'ui/authentication//GOOGLE_LOGIN': 'Google',
+      'ui/authentication//PASSWORD_MISSING': 'Please enter your password',
+      'ui/authentication//AUTH_ERROR_USER_LOCKED': 'Your account has been locked due to excessive authentication failures. Please click the <strong>Forgot password?</strong> link to set a new password.',
+      'ui/authentication//CREATE_BRAND_ACCOUNT': 'Create {0} account',
+      'ui/authentication//MAGIC_LINK_DONE__NEW_USER_DESC': 'We just sent a magic link to {0}. Click on the link in the email to finish setting up your account.',
+      'ui/authentication//AUTH_FORGOT_FORM_CANCEL': 'Cancel',
+      'ui/authentication//MAGIC_LINK_EMAIL_ADDRESS_LABEL': "What's your email address?",
+      'ui/authentication//MAGIC_LINK_DONE_HEADER': 'Check your inbox',
+      'ui/authentication//MAGIC_LINK_DESC': "We'll send an email to {0} that includes a magic link to complete account setup.",
+      'ui/authentication//AUTH_FORGOT_FORM_SHORT_HEADING': 'Forgot password?',
+      'ui/authentication//AUTH_FORGOT_FORM_SUCCESS_INSTRUCTIONS_DEFAULT': 'Please check your email for a link to reset your password.',
+      'ui/authentication//MAGIC_LINK_RESEND_EMAIL': "Didn't get an email?",
+      'ui/authentication//MAGIC_LINK_DONE_EXISTING_RETURN': 'Return to this screen after you click on the link to complete sign-in.',
+      'ui/authentication//ONBOARDING_HEADER_DESC_V2': 'Take a second to add {0} for Business to your account - it’s free and can help your team find better options and corporate rates.',
+      'ui/authentication//AUTH_SOCIAL_API_ERROR': 'There was an issue loading this sign-in service. Your browser may be blocking third-party scripts from loading.',
+      'ui/authentication//AUTH_FORGOT_FORM_SUBMIT_PROCESSING': 'Sending...',
+      'ui/authentication//MAGIC_LINK_RESEND_EMAIL_LBL': 'Resend email',
+      'ui/authentication//CONTACT_LABEL': 'Contact customer service',
+      'ui/authentication//AUTH_USERNAME_PLACEHOLDER': 'Email Address',
+      'ui/authentication//MAGIC_LINK_BACK_NAV': 'Back',
+      'ui/authentication//REGISTER_HEADER_WELCOME': 'Sign up and save',
+      'ui/trips/components/SaveToTrips//WATCH_RESULT_ICON_ARIA_LABEL': 'Save',
+      'ui/authentication//EXTERNAL_AUTHENTICATION_HEADER': 'Choose external authentication site',
+      'ui/authentication//DONT_HAVE_AN_ACCOUNT': "Don't have an account?",
+      'ui/authentication//LOCKED_ACCOUT_DIALOG_CONTENT': '{0},{1}Your account was locked due to suspicious or unauthorized activity. Please contact customer service to unlock your account.',
+      'ui/authentication//LOGIN_PASSWORD_DESC': 'Please enter your {0} password for {1}.',
+      'ui/authentication//CONTINUE_WITH_BDC': 'Continue with {0}',
+      'ui/results/components//SAVE_LINK_TEXT': 'Save',
+      'ui/authentication//AUTH_FORGOT_FORM_INSTRUCTIONS': "Enter the email associated with your account in the field below and we'll email you a link to reset your password.",
+      'ui/authentication//MLINK_LOGIN_HEADER_DESC': 'Track prices, organize travel plans and access member-only deals with your {0} account.',
+      'ui/authentication//AUTH_OR_SIMPLE': 'or',
+      'ui/authentication//AUTH_TERMS_AGREE_SIGNUP': 'By signing up you accept our {2}terms of use{3} and {0}privacy policy{1}.',
+      'ui/authentication//AUTH_CREATE_ACCOUNT_BUTTON': 'Create account',
+      'ui/authentication//ONBOARDING_BUTTON_TEXT': 'Add Business profile',
+      'ui/authentication//MLINK_LOGIN_HEADER_WELCOME_V2': 'Sign in or create an account',
+      'ui/authentication//NAVER_LOGIN': 'NAVER',
+      'ui/authentication//ALREADY_HAVE_AN_ACCOUNT': 'Already have an account?',
+      'ui/authentication//CONTINUE_WITH_APPLE': 'Continue with Apple'
+    },
+    images: {
+      'ui/authentication//magiclinkloginBg.svg': 'https://content.r9cdn.net/res/images/horizon/ui/authentication/magiclinkloginBg.svg?v=51b1eb86dc2a73bb4297a6bc9c86bc82c2158f04&cluster=4',
+      'ui/authentication//ticket-and-case.svg': 'https://content.r9cdn.net/res/images/horizon/ui/authentication/ticket-and-case.svg?v=72dbdd4e333412fe16e61f3ad5fde50d5d12268c&cluster=4',
+      'ui/authentication//businessOnboarding.svg': 'https://content.r9cdn.net/res/images/horizon/ui/authentication/businessOnboarding.svg?v=fa359db1d1d6d82d7bc01c3ed265b3ac2c11cf73&cluster=4',
+      'ui/authentication//magiclinkhatBg.svg': 'https://content.r9cdn.net/res/images/horizon/ui/authentication/magiclinkhatBg.svg?v=b9fad50c976ce9258baf2db0d9eefd2b0dcee061&cluster=4'
+    },
+    resources: {},
+    properties: {
+      '83': 'false',
+      '85': 'false',
+      '86': 'false',
+      '94': 'true',
+      '222': 'KAYAK',
+      '253': 'v3.2',
+      '254': '163003079204',
+      '255': 'email',
+      '256': '446009525344-j420p21u4ap0114qr1fnrk8bhq4f2il1.apps.googleusercontent.com',
+      '257': 'profile email',
+      '258': 'true',
+      '259': 'true',
+      '260': '',
+      '261': 'false',
+      '262': 'true',
+      '263': '',
+      '264': 'false',
+      '265': '15000',
+      '266': 'true',
+      '267': 'true',
+      '268': 'k4bOnboardingLeisure',
+      '269': '',
+      '270': '',
+      '271': 'true',
+      '272': '',
+      '273': 'true',
+      '274': 'true',
+      '275': 'true',
+      '276': '',
+      '277': 'false',
+      '283': '',
+      '517': 'true',
+      '527': 'false',
+      '788': '',
+      '1372': '',
+      '1373': '',
+      '1397': '1280',
+      '1399': '',
+      '1600': 'false',
+      '1614': '',
+      '2246': 'false',
+      '2247': 'true',
+      '2304': 'false',
+      '2306': ''
+    },
+    stylejams: {},
+    mappings: {},
+    components: [ [Object], [Object], [Object] ],
+    actualComponentsMap: {
+      'ui/trips/components/SaveToTrips/SaveResultButtonWrapper': 'default/ui/trips/components/SaveToTrips/SaveResultButtonWrapper'
+    }
+  },
+  styles: [
+    'https://content.r9cdn.net/res/combined.css?v=1f73125a2044227cd0d62c6b514764dddb08fbf7-keel-headings-update&cluster=4'
+  ],
+  stylesMetadata: '23g74C1gCE35C1E85g54Og46CE1Q1E2QC4U2kB299Q624QZIkCZIg1Q683Q==',
+  scripts: [
+    'https://content.r9cdn.net/res/combined.js?v=d18170090b50a126b61a0ec6ce57414057002999-keel-headings-update&cluster=4'
+  ],
+  scriptsMetadata: '16g27UB19g38B26Q44Gg23B1Cg1I2Q1i1E2E2B5E32g=',
+  globals: {
+    formtoken: 'JKdkw_eTx4ydmL$z_$jWotOuzAshZGnLEDY3vR7rr24-N04Hh9qRepStLYd9eA4Kl6V0QQiE1pLj7iAqYL2Rqxc'
+  }
+}
