@@ -1,4 +1,4 @@
-import type { Page } from 'puppeteer'
+import type { Page }  from 'puppeteer'
 import SearchResultsPage from '../pageObjects/searchResultsPage'
 import KayakBrowserController from '../browserControllers/kayakBrowserController'
 import logger from '../util/logger'

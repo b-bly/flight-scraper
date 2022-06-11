@@ -1,4 +1,4 @@
-import type { Page } from 'puppeteer'
+import type { Page }  from 'puppeteer'
 import { retryClick } from '../util/util'
 import logger from '../util/logger'
 import Navigation from './navigation'

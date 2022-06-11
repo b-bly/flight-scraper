@@ -1,4 +1,4 @@
-import type { Browser } from 'puppeteer'
+import type { Browser }  from 'puppeteer'
 import SearchPageController from '../pageControllers/searchPageController'
 import AirportService from '../services/airportService'
 import logger from '../util/logger'

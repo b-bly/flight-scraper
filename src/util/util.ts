@@ -1,5 +1,5 @@
 import { MAX_RETRIES } from './constants'
-import type { Page } from 'puppeteer'
+import type { Page }  from 'puppeteer'
 import logger from './logger'
 import csv from 'csv-parser' // const csv = require('csv-parser');
 import { createReadStream } from 'fs'

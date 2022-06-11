@@ -26,9 +26,8 @@ export default class SearchResultsPage extends SearchPage {
   }
 
   async getFirstPrice() {
-    const { page } = this
-    await page.waitForSelector(FLIGHT_PRICE)
-    return page.evaluate(
+    await this.page.waitForSelector(FLIGHT_PRICE)
+    return this.page.evaluate(
       (selector) => document.querySelector(selector).textContent,
       FLIGHT_PRICE
     )
@@ -36,26 +35,17 @@ export default class SearchResultsPage extends SearchPage {
 
   async getFirstAirline() {
     const { page } = this
-    await page.waitForSelector(AIRLINES)
-    return page.evaluate(
+    await this.page.waitForSelector(AIRLINES)
+    return this.page.evaluate(
       (selector) => document.querySelector(selector).textContent,
       AIRLINES
     )
   }
 
-  // async getFirstArrivalTime() {
-  //   const { page } = this
-  //   await this.page.waitForSelector(ARRIVAL_TIME)
-  //   return page.evaluate(
-  //     (selector) => document.querySelector(selector).textContent,
-  //     ARRIVAL_TIME
-  //   )
-  // }
-
   async getFirstDepartureTime() {
     const { page } = this
-    await page.waitForSelector(DEPART_TIME)
-    return page.evaluate(
+    await this.page.waitForSelector(DEPART_TIME)
+    return this.page.evaluate(
       (selector) => document.querySelector(selector).textContent,
       DEPART_TIME
     )
@@ -63,28 +53,40 @@ export default class SearchResultsPage extends SearchPage {
 
   async getFirstUrl() {
     const { page } = this
-    await page.waitForSelector(URL)
-    return page.evaluate(
+    await this.page.waitForSelector(URL)
+    return this.page.evaluate(
       (selector) => document.querySelector(selector).textContent,
       URL
     )
   }
 
-  async getData(fromCode: string, toCode: string) {
-    const {
-      getFirstPrice,
-      getFirstAirline,
-      getFirstDepartureTime,
-      getFirstUrl,
-    } = this
+  async getFirstArrivalTime() {
+    const { page } = this
+    await this.page.waitForSelector(ARRIVAL_TIME)
+    return page.evaluate(
+      (selector) => document.querySelector(selector).textContent,
+      ARRIVAL_TIME
+    )
+  }
 
-    const price = await getFirstPrice()
-    const airlines = await getFirstAirline()
+  async getData(fromCode: string, toCode: string) {
+    // const {
+    //   getFirstPrice,
+    //   getFirstAirline,
+    //   getFirstDepartureTime,
+    //   getFirstUrl,
+    // } = this
+
+    const priceString = await this.getFirstPrice()
+    const price = priceString.replace('$', '').replace(/,/g, '')
+    const airlines = await this.getFirstAirline()
     const destination = toCode
-    const arrivalTime = new Date() //await this.getFirstArrivalTime()
+    const arrivalTimeString = await this.getFirstArrivalTime()
+    const arrivalTime = new Date(arrivalTimeString)
     const departure = fromCode
-    const departureTime = await getFirstDepartureTime()
-    const relativeUrl = await getFirstUrl()
+    const departureTimeString = await this.getFirstDepartureTime()
+    const departureTime = new Date(departureTimeString)
+    const relativeUrl = await this.getFirstUrl()
     const url = `https://kayak.com${relativeUrl}`
     const data: IFlightPayload = {
       price,
@@ -96,6 +98,7 @@ export default class SearchResultsPage extends SearchPage {
       url,
     }
     console.log(data)
-    return data
+    // return data
+    console.log(departureTimeString)
   }
 }
