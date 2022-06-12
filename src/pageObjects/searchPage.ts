@@ -1,5 +1,5 @@
 import type { Page }  from 'puppeteer'
-import { retryClick } from '../util/util'
+import { retryClick, addDays } from '../util/util';
 import logger from '../util/logger'
 import Navigation from './navigation'
 import { IFlightPayload } from '../models/flight'
@@ -12,7 +12,7 @@ enum Sort {
   price = 'price',
 }
 
-interface FlightSearchParameters {
+export interface FlightSearchParameters {
   sort: Sort
   numberAdults: number
   date: Date
@@ -131,10 +131,11 @@ export default class SearchPage extends Navigation {
   }
 
   getSearchDefaults(): FlightSearchParameters {
+    const date = addDays(new Date(), 10)
     return {
       sort: Sort.bestflight,
       numberAdults: 1,
-      date: new Date(),
+      date,
     }
   }
 
@@ -195,8 +196,8 @@ export default class SearchPage extends Navigation {
         if (data) {
           logger.debug('Saving flight')
           const payload = this.convertToFlight(data)
-          await FlightService.saveFlight(payload)
-          await parent.onSearchDataReceived()
+          await parent.onSearchDataReceived(payload)
+          // TODO Maybe look into grabbing data from this html.  Use a parser
           // } else if (body.bufferedScripts) {
           // logger.debug('Received flight data type bufferedScripts')
           // console.log(body.bufferedScripts)

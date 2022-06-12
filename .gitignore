@@ -73,3 +73,7 @@ dist/*
 screenshots/*
 logs/*
 **/*.log
+
+# scripting tests
+scratch.js
+

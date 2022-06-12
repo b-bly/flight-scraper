@@ -49,6 +49,7 @@ export default class KayakBrowserController {
     )
 
     await searchPageController.searchForFlightByUi(fromCode, toCode) // LAS
-    return
+    await page.close()
+    return await this.exit()
   }
 }

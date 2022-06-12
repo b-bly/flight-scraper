@@ -1,7 +1,9 @@
-import type { Page }  from 'puppeteer'
+import type { Page } from 'puppeteer'
 import SearchResultsPage from '../pageObjects/searchResultsPage'
 import KayakBrowserController from '../browserControllers/kayakBrowserController'
 import logger from '../util/logger'
+import FlightService from '../services/flightService'
+import { IFlightPayload } from '../models/flight'
 
 // namespace SearchPage {
 //   interface SearchPageControllerOptions {
@@ -35,26 +37,27 @@ export default class SearchPageController {
   async searchForFlightByUi(fromCode: string, toCode: string) {
     const { searchPage } = this
     const searchDefaults = searchPage.getSearchDefaults()
+    // TODO set date as param
     const searchUrl = searchPage.getSearchUrl(fromCode, toCode, searchDefaults)
     await this.visit(searchUrl)
     // await searchPage.waitForPageToLoad()
     // await searchPage.getResultsFromUI(fromCode, toCode)
-    const data = await this.searchPage.getData(fromCode, toCode)
-    return data
+    const payload = await this.searchPage.getData(fromCode, toCode, searchDefaults)
+    return await FlightService.saveFlight(payload)
   }
 
-  async onSearchDataReceived() {
-    await this.page.close()
+  async onSearchDataReceived(payload: IFlightPayload): Promise<void> {
+    await FlightService.saveFlight(payload)
     await this.page.off('response', () =>
       logger.debug('Unsubscribe from response')
     )
-    await this.kayakBrowserController.exit()
+    return
   }
 
   async abortInterceptSearch() {
+    logger.info('Intercept search failed.  Trying searching by UI')
     const { fromCode, toCode } = this
-    logger.debug('Intercept search failed.  Trying searching by UI')
-    return await this.searchForFlightByUrl(fromCode, toCode)
+    return await this.searchForFlightByUi(fromCode, toCode)
   }
 
   async searchForFlightByUrl(fromCode: string, toCode: string) {

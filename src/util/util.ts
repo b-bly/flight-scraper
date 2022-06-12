@@ -1,5 +1,5 @@
 import { MAX_RETRIES } from './constants'
-import type { Page }  from 'puppeteer'
+import type { Page } from 'puppeteer'
 import logger from './logger'
 import csv from 'csv-parser' // const csv = require('csv-parser');
 import { createReadStream } from 'fs'
@@ -77,4 +77,21 @@ export const getJsonFromCsv = async (
       cb()
     }
   })
+}
+
+export const addDays = (date: Date, days: number) => {
+  const result = new Date(date)
+  result.setDate(result.getDate() + days)
+  return result
+}
+
+export const convertTo24 = (time12: string, amPm: string) => {
+  time12 = time12.trim()
+  if (amPm.trim().toLowerCase() === 'pm') {
+    const hours = time12.match(/\d+/)[0]
+    const minutes = time12.match(/\d+/g)[1]
+    const hours24 = (parseInt(hours) + 12).toString() + ':' + minutes
+    return hours24
+  }
+  return time12
 }
