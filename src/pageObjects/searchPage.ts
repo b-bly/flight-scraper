@@ -1,5 +1,5 @@
-import type { Page }  from 'puppeteer'
-import { retryClick, addDays } from '../util/util';
+import type { Page } from 'puppeteer'
+import { retryClick, addDays } from '../util/util'
 import logger from '../util/logger'
 import Navigation from './navigation'
 import { IFlightPayload } from '../models/flight'
@@ -18,23 +18,22 @@ export interface FlightSearchParameters {
   date: Date
 }
 
-// TODO namespace
-
 // const PICK_UP_LOCATION_BUTTON = '[aria-label="Pick-up location"]' // cars page
-const FLIGHTS_LINK = 'a[href="/flights"'
-const AIRPORT_CHIP_CLOSE_BUTTON = '.vvTc-item .vvTc-item-close'
-const AIRPORT_FROM_BUTTON = '[aria-label="Flight origin input"]'
-const AIRPORT_FROM_INPUT = '.k_my input' // input[placeholder="From?"]
-const FROM_LIST_ITEM = 'ul[role="tablist"] li'
-const FROM_CHIP =
-  'div[aria-label="Flight origin input"] div[role="list"] div[role="listitem"]'
-const AIRPORT_DESTINATION_BUTTON = '[aria-label="Flight destination input"]'
-const AIRPORT_DESTINATION_INPUT = 'input[placeholder="To?"]'
-const TO_LIST_ITEM = 'ul[role="tablist"] li'
-const TO_CHIP =
-  'div[aria-label="Flight destination input"] div[role="list"] div[role="listitem"]'
-const SEARCH_BUTTON = '[aria-label="Search"][aria-disabled="false"]'
-
+namespace SearchPageConstants {
+  export const FLIGHTS_LINK = 'a[href="/flights"'
+  export const AIRPORT_CHIP_CLOSE_BUTTON = '.vvTc-item .vvTc-item-close'
+  export const AIRPORT_FROM_BUTTON = '[aria-label="Flight origin input"]'
+  export const AIRPORT_FROM_INPUT = '.k_my input' // input[placeholder="From?"]
+  export const FROM_LIST_ITEM = 'ul[role="tablist"] li'
+  export const FROM_CHIP =
+    'div[aria-label="Flight origin input"] div[role="list"] div[role="listitem"]'
+  export const AIRPORT_DESTINATION_BUTTON = '[aria-label="Flight destination input"]'
+  export const AIRPORT_DESTINATION_INPUT = 'input[placeholder="To?"]'
+  export const TO_LIST_ITEM = 'ul[role="tablist"] li'
+  export const TO_CHIP =
+    'div[aria-label="Flight destination input"] div[role="list"] div[role="listitem"]'
+  export const SEARCH_BUTTON = '[aria-label="Search"][aria-disabled="false"]'
+}
 export default class SearchPage extends Navigation {
   path: string = '/flights'
 
@@ -46,7 +45,7 @@ export default class SearchPage extends Navigation {
     const { page } = this
     await page.screenshot({ path: './screenshots/before_load.png' })
     try {
-      await page.waitForSelector(AIRPORT_FROM_BUTTON)
+      await page.waitForSelector(SearchPageConstants.AIRPORT_FROM_BUTTON)
     } catch (e) {
       await logger.error("Couldn't find airport from button.")
       page.screenshot({ path: './screenshots/failed_to_load_home.png' })
@@ -74,34 +73,34 @@ export default class SearchPage extends Navigation {
   async searchForFlight(from: string, to: string) {
     const { page } = this
     const airportChipCloseButton = await page.waitForSelector(
-      AIRPORT_CHIP_CLOSE_BUTTON
+      SearchPageConstants.AIRPORT_CHIP_CLOSE_BUTTON
     )
     if (airportChipCloseButton) {
       airportChipCloseButton.click()
     }
-    const fromInput = await page.waitForSelector(AIRPORT_FROM_INPUT)
+    const fromInput = await page.waitForSelector(SearchPageConstants.AIRPORT_FROM_INPUT)
     fromInput.type(from, { delay: 100 })
 
-    await retryClick(page, FROM_LIST_ITEM)
-    const fromListItem = await page.waitForSelector(FROM_LIST_ITEM)
+    await retryClick(page, SearchPageConstants.FROM_LIST_ITEM)
+    const fromListItem = await page.waitForSelector(SearchPageConstants.FROM_LIST_ITEM)
     await fromListItem.click()
 
     // wait for destination to appear in chip in from box.
-    await page.waitForSelector(FROM_CHIP)
+    await page.waitForSelector(SearchPageConstants.FROM_CHIP)
     // await sleep(1)
 
     // *** To destination ***
     const destinationInputButton = await page.waitForSelector(
-      AIRPORT_DESTINATION_BUTTON,
+      SearchPageConstants.AIRPORT_DESTINATION_BUTTON,
       { visible: true }
     )
 
     await page.evaluate((selector) => {
       document.querySelector(selector).click()
-    }, AIRPORT_DESTINATION_BUTTON)
+    }, SearchPageConstants.AIRPORT_DESTINATION_BUTTON)
 
     // await destinationInputButton.click()
-    const toInput = await page.waitForSelector(AIRPORT_DESTINATION_INPUT)
+    const toInput = await page.waitForSelector(SearchPageConstants.AIRPORT_DESTINATION_INPUT)
     await toInput.type(to, { delay: 100 })
 
     // validate text
@@ -110,22 +109,22 @@ export default class SearchPage extends Navigation {
       logger.debug('Retrying destination entry')
       await page.evaluate(
         (selector) => (document.querySelector(selector).value = ''),
-        AIRPORT_DESTINATION_INPUT
+        SearchPageConstants.AIRPORT_DESTINATION_INPUT
       )
       await toInput.type(to, { delay: 100 })
     }
 
-    const toListItem = await page.waitForSelector(TO_LIST_ITEM)
+    const toListItem = await page.waitForSelector(SearchPageConstants.TO_LIST_ITEM)
     await toListItem.click()
-    await page.waitForSelector(TO_CHIP)
+    await page.waitForSelector(SearchPageConstants.TO_CHIP)
     // TODO Select dates
 
     // await sleep(2)
-    await page.waitForSelector(SEARCH_BUTTON)
-    const searchButton = await page.$(SEARCH_BUTTON)
+    await page.waitForSelector(SearchPageConstants.SEARCH_BUTTON)
+    const searchButton = await page.$(SearchPageConstants.SEARCH_BUTTON)
     return await page.evaluate(
       (selector) => document.querySelector(selector).click(),
-      SEARCH_BUTTON
+      SearchPageConstants.SEARCH_BUTTON
     )
     // return await searchButton.click()
   }
