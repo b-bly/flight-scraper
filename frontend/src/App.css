@@ -1,0 +1,23 @@
+.flex-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  border-radius: '3px';
+  box-shadow: -2px 1px 3px gray;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.container {
+  padding: 5px;
+}
