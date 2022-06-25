@@ -7,6 +7,8 @@ import FlightService from './services/flightService'
 import { connectToMongo } from './database'
 import logger from './util/logger'
 import { flights } from './routes/flights'
+import { allowedExt } from './util/constants';
+import './util/constants'
 
 const fs = require('fs')
 const existsSync = fs.existsSync
@@ -28,6 +30,33 @@ app.listen(port, () => {
 })
 
 app.use('/api/flights', flights)
+
+
+// ==== if its production environment
+const clientPath = '../frontend/build/';
+if (process.env.NODE_ENV === 'production') {
+  logger.info('GET static files')
+	const path = require('path')
+	app.use('/static', express.static(path.join(__dirname, clientPath, 'static')));
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, clientPath, 'index.html'))
+	})
+
+	app.get('*', (req, res) => {
+
+		// if there is a file extension, send the file
+
+		if (allowedExt.filter(ext => req.url.indexOf(ext) > 0).length > 0) {
+			// remove any querystring like '?q=search-terms'
+			req.url = req.url.replace(/\?.*/g, '');
+
+			res.sendFile(path.resolve(__dirname, `${clientPath}${req.url}`));
+		} else {
+			res.sendFile(path.resolve(__dirname, `${clientPath}index.html`));
+		}
+	});
+}
+
 
 // Test db connection
 

@@ -28,3 +28,16 @@ if (TWO_CAPTCHA_KEY) {
   logger.error('No client secret. Set 2CAPTCHA_KEY environment variable.')
   process.exit(1)
 }
+
+export const allowedExt = [
+	'.js',
+	'.ico',
+	'.css',
+	'.png',
+	'.jpg',
+	'.woff2',
+	'.woff',
+	'.ttf',
+	'.svg',
+];
+
