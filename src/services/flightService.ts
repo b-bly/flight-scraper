@@ -11,8 +11,8 @@ export default class FlightService {
       throw new Error('pages must be more than one')
     }
     const skip = (page - 1) * 20
-    return await Flight.find()
-      .skip(10)
+    return await Flight.find({})
+      .skip(skip)
       .limit(20)
   }
 }

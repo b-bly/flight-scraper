@@ -6,6 +6,7 @@ import { Flight } from './models/flight'
 import FlightService from './services/flightService'
 import { connectToMongo } from './database'
 import logger from './util/logger'
+import { flights } from './routes/flights'
 
 const fs = require('fs')
 const existsSync = fs.existsSync
@@ -15,8 +16,8 @@ const { exec } = require('child_process')
 connectToMongo()
 
 // TODO Uncomment when db and server are done
-const runner = new Runner()
-runner.start()
+// const runner = new Runner()
+// runner.start()
 
 const app = express()
 // TODO: Set as env
@@ -26,12 +27,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.get('/', (_req: Request, res: Response) => {
-  FlightService.getFlights().then(flights => {
-    console.log(flights)
-    res.send(flights[0])
-  })
-})
+app.use('/api/flights', flights)
 
 // Test db connection
 
