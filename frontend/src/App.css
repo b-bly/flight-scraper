@@ -1,7 +1,15 @@
 .flex-row {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.nav {
+  align-content: flex-start;
+  margin-bottom: 5px;
+}
+
+.nav h3 {
+  margin: 0px;
 }
 
 .flex-column {
@@ -9,15 +17,38 @@
   flex-direction: column;
 }
 
+.parent-container {
+  height: 100vh;
+}
+
 .box {
   border-radius: '3px';
   box-shadow: -2px 1px 3px gray;
+  background-color: #EFEFEF;
+  justify-content: space-around;
+  margin: 5px;
 }
 
 .blue {
-  background-color: blue;
+  background-color: #205375;
+}
+
+.dark-blue {
+  background-color: #112B3C;
+}
+
+.orange {
+  background-color: #F66B0E
+}
+
+.gray {
+  background-color: #EFEFEF
 }
 
 .container {
   padding: 5px;
+}
+
+.text-white {
+  color: white;
 }
