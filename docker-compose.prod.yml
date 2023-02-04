@@ -15,6 +15,8 @@ services:
       - PORT=${PORT}
       - MONGODB_URI=mongodb://mongo:27017/flight
       - NODE_ENV=${NODE_ENV}
+      - APPLITOOLS_API_KEY=${APPLITOOLS_API_KEY}
+      - TWO_CAPTCHA_KEY=${TWO_CAPTCHA_KEY}
     ports:
       - 8080:8080
     external_links:

@@ -1,6 +1,8 @@
 # 2 stage build
 # https://cloudnweb.dev/2019/09/building-a-production-ready-node-js-app-with-typescript-and-docker/
 FROM node:16-slim as BUILD_IMAGE
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
 WORKDIR /usr
 COPY package.json ./
 COPY tsconfig.json ./
@@ -9,9 +11,10 @@ RUN ls -a
 RUN npm install
 RUN npm run build
 
-FROM node:16-slim
+# https://dev.to/docker/unable-to-locate-package-google-chrome-stable-b62
+FROM --platform=linux/amd64 node:16-slim
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
 
 # https://dev.to/cloudx/how-to-use-puppeteer-inside-a-docker-container-568c
@@ -36,8 +39,13 @@ COPY package.json /app/
 
 # Install deps for server.
 ENV NODE_ENV=production
-RUN npm i --only=production
-RUN npm i puppeteer --save
+ENV PORT=$PORT
+ENV MONGODB_URI=$MONGODB_URI
+ENV APPLITOOLS_API_KEY=$APPLITOOLS_API_KEY
+ENV TWO_CAPTCHA_KEY=$TWO_CAPTCHA_KEY
+
+RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm i --only=production
+RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm i puppeteer --save
 RUN npx install-chrome-dependencies
 
 

@@ -9,7 +9,7 @@
 # RUN npm install
 # RUN npm run build
 
-FROM node:14-slim
+FROM node:16-slim
 
 # puppeteer docs https://developers.google.com/web/tools/puppeteer/troubleshooting#running-puppeteer-in-docker
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)

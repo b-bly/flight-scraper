@@ -5,3 +5,5 @@ if test -f .env ; then
 fi
 
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+# build without cache
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build

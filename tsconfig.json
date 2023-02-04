@@ -7,7 +7,8 @@
     "sourceMap": true,
     "rootDir": "./src",
     "outDir": "./dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "target": "es2015"
   },
   "moduleResolution": "node",
   "include": [
