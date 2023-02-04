@@ -7,7 +7,7 @@ import FlightService from './services/flightService'
 import { connectToMongo } from './database'
 import logger from './util/logger'
 import { flights } from './routes/flights'
-import { allowedExt } from './util/constants';
+import { allowedExt } from './util/constants'
 import './util/constants'
 
 const fs = require('fs')
@@ -17,9 +17,43 @@ const { exec } = require('child_process')
 
 connectToMongo()
 
+// let options: {} = {
+//   headless: false,
+//   args: [
+//     '--disable-gpu',
+//     '--disable-dev-shm-usage',
+//     '--disable-setuid-sandbox',
+//     '--no-sandbox',
+//   ],
+// }
+
+let options: {} = {
+	headless: false,
+	executablePath: '/Applications/Google Chrome.app',
+	args: [
+	  '--disable-gpu',
+	  '--disable-dev-shm-usage',
+	  '--disable-setuid-sandbox',
+	  '--no-sandbox',
+	],
+  }
+
+
+if (process.env.NODE_ENV === 'production') {
+  options = {
+    // executablePath: '/usr/bin/google-chrome',
+    headless: true,
+    args: [
+      '--disable-gpu',
+      '--disable-dev-shm-usage',
+      '--disable-setuid-sandbox',
+      '--no-sandbox',
+    ]
+  }
+}
 // TODO Uncomment when db and server are done
-// const runner = new Runner()
-// runner.start()
+const runner = new Runner(options)
+runner.start()
 
 const app = express()
 // TODO: Set as env
@@ -31,32 +65,29 @@ app.listen(port, () => {
 
 app.use('/api/flights', flights)
 
-
 // ==== if its production environment
-const clientPath = '../frontend/build/';
+const clientPath = '../frontend/build/'
 if (process.env.NODE_ENV === 'production') {
   logger.info('GET static files')
-	const path = require('path')
-	app.use('/static', express.static(path.join(__dirname, clientPath, 'static')));
-	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, clientPath, 'index.html'))
-	})
+  const path = require('path')
+  app.use('/static', express.static(path.join(__dirname, clientPath, 'static')))
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, clientPath, 'index.html'))
+  })
 
-	app.get('*', (req, res) => {
+  app.get('*', (req, res) => {
+    // if there is a file extension, send the file
 
-		// if there is a file extension, send the file
+    if (allowedExt.filter((ext) => req.url.indexOf(ext) > 0).length > 0) {
+      // remove any querystring like '?q=search-terms'
+      req.url = req.url.replace(/\?.*/g, '')
 
-		if (allowedExt.filter(ext => req.url.indexOf(ext) > 0).length > 0) {
-			// remove any querystring like '?q=search-terms'
-			req.url = req.url.replace(/\?.*/g, '');
-
-			res.sendFile(path.resolve(__dirname, `${clientPath}${req.url}`));
-		} else {
-			res.sendFile(path.resolve(__dirname, `${clientPath}index.html`));
-		}
-	});
+      res.sendFile(path.resolve(__dirname, `${clientPath}${req.url}`))
+    } else {
+      res.sendFile(path.resolve(__dirname, `${clientPath}index.html`))
+    }
+  })
 }
-
 
 // Test db connection
 

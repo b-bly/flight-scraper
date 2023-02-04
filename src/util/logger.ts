@@ -9,10 +9,12 @@ if (!existsSync(logDir)) {
   mkdirSync(logDir)
 }
 
+const logLevel = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : 'error'
+
 const options: winston.LoggerOptions = {
   transports: [
     new winston.transports.Console({
-      level: process.env.NODE_ENV === 'production' ? 'error' : 'debug',
+      level: logLevel,
     }),
     new winston.transports.File({
       filename: join(logDir, '/log.log'),

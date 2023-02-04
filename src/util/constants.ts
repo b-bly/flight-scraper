@@ -24,8 +24,8 @@ logger.debug(`Setting MONGODB_URI to ${mongodbUri}`)
 export const MONGODB_URI = mongodbUri
 export const TWO_CAPTCHA_KEY = process.env['TWO_CAPTCHA_KEY']
 
-if (TWO_CAPTCHA_KEY) {
-  logger.error('No client secret. Set 2CAPTCHA_KEY environment variable.')
+if (!TWO_CAPTCHA_KEY) {
+  logger.error('No client secret. Set TWO_CAPTCHA_KEY environment variable.')
   process.exit(1)
 }
 
