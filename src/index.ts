@@ -41,7 +41,7 @@ let options: {} = {
 
 if (process.env.NODE_ENV === 'production') {
   options = {
-    executablePath: '/usr/bin/google-chrome',
+    // executablePath: '/usr/bin/google-chrome',
     headless: true,
     args: [
       '--disable-gpu',

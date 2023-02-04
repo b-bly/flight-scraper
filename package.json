@@ -8,14 +8,17 @@
     "clean": "rm -rf dist/* && npm run clean:logs",
     "clean:logs": "rm -rf logs/*",
     "clean:docker": "bash minikube/cleanup.sh",
+    "clean:data": "rm -rf data/*",
     "lint": "npx eslint --fix",
     "prebuild": "npm run clean && npm run lint && npm install",
     "build": "npm run tsc",
     "postbuild": "cpy '**/*' '!**/*.ts' ../dist/ --cwd=src/ --no-overwrite --parents",
-    "start": "NODE_ENV=production MONGODB_URI='mongodb://0.0.0.0:27017/flight' node ./dist/index.js",
+    "start": "node ./dist/index.js",
     "dev:start": "ts-node src/index.ts",
     "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
-    "dev:watch": "nodemon --watch src --exec ts-node src/index.ts"
+    "dev:watch": "nodemon --watch src --exec ts-node src/index.ts",
+    "docker:dev": "docker-compose  --env-file .env -f docker-compose.yml -f docker-compose.override.yml up --build",
+    "docker:prod": "bash build.sh"
   },
   "repository": {
     "type": "git",
