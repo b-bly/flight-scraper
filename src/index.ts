@@ -40,6 +40,7 @@ let options: {} = {
 
 
 if (process.env.NODE_ENV === 'production') {
+  // for chrome (set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true)
   options = {
     executablePath: '/usr/bin/google-chrome',
     headless: true,
@@ -50,6 +51,17 @@ if (process.env.NODE_ENV === 'production') {
       '--no-sandbox',
     ]
   }
+
+  // chromium
+  // options = {
+  //   headless: true,
+  //   args: [
+  //     '--disable-gpu',
+  //     '--disable-dev-shm-usage',
+  //     '--disable-setuid-sandbox',
+  //     '--no-sandbox',
+  //   ]
+  // }
 }
 // TODO Uncomment when db and server are done
 const runner = new Runner(options)
