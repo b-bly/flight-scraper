@@ -18,7 +18,6 @@ services:
     environment:
       - PORT=${PORT}
       - MONGODB_URI=${MONGODB_URI}
-      - APPLITOOLS_API_KEY=${APPLITOOLS_API_KEY}
       - TWO_CAPTCHA_KEY=${TWO_CAPTCHA_KEY}
     ports:
       - 4005:4005

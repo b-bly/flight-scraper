@@ -79,3 +79,6 @@ scratch.js
 
 # docker data
 data/*
+
+# secrets
+minikube/**/*secret.yaml

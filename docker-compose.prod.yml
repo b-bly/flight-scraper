@@ -8,6 +8,7 @@ services:
       - 27017:27017
   app:
     container_name: app
+    image: us-central1-docker.pkg.dev/${GOOGLE_PROJECT_ID}/hello-repo/flight-scraper:v1
     restart: always
     build: .
     env_file: .env
